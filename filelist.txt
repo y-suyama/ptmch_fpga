@@ -1,0 +1,5 @@
+filelist.txt
+devplatforms/17.1std.1/max10_10m08_top/filelist.txt
+max10_10m08_top.v
+platform_setup.tcl
+devplatforms/17.0.0/max10_10m08_top/filelist.txt

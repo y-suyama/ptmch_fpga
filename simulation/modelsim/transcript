@@ -1,0 +1,32 @@
+# Compile of ptmch_top.sv was successful.
+# Compile of ptmch_trg.sv was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of ptmch_top.sv was successful.
+# Compile of ptmch_trg.sv was successful.
+# Compile of ptmch_top_tb.sv failed with 3 errors.
+# 3 compiles, 1 failed with 3 errors.
+# Compile of ptmch_top.sv was successful.
+# Compile of ptmch_trg.sv was successful.
+# Compile of ptmch_top_tb.sv failed with 2 errors.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of ptmch_top.sv was successful.
+# Compile of ptmch_trg.sv was successful.
+# Compile of ptmch_top_tb.sv failed with 2 errors.
+# 3 compiles, 1 failed with 2 errors.
+# Error opening C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/simulation/modelsim/(vlog-13053) C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/rtl/tb/ptmch_top_tb.sv
+# Path name 'C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/simulation/modelsim/(vlog-13053) C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/rtl/tb/ptmch_top_tb.sv' doesn't exist.
+# Compile of ptmch_top.sv was successful.
+# Compile of ptmch_trg.sv was successful.
+# Compile of ptmch_top_tb.sv failed with 1 errors.
+# 3 compiles, 1 failed with 1 error.
+# Error opening C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/simulation/modelsim/(vlog-13069) C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/rtl/tb/ptmch_top_tb.sv
+# Path name 'C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/simulation/modelsim/(vlog-13069) C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/rtl/tb/ptmch_top_tb.sv' doesn't exist.
+# Error opening C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/simulation/modelsim/(vlog-13069) C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/rtl/tb/ptmch_top_tb.sv
+# Path name 'C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/simulation/modelsim/(vlog-13069) C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/rtl/tb/ptmch_top_tb.sv' doesn't exist.
+# Error opening C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/simulation/modelsim/(vlog-13069) C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/rtl/tb/ptmch_top_tb.sv
+# Path name 'C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/simulation/modelsim/(vlog-13069) C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/rtl/tb/ptmch_top_tb.sv' doesn't exist.
+# Compile of ptmch_top.sv was successful.
+# Compile of ptmch_trg.sv was successful.
+# Compile of ptmch_top_tb.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui -l msim_transcript work.ptmch_top

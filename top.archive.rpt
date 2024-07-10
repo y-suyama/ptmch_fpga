@@ -1,0 +1,182 @@
+Archive Project report for top
+Wed Jul 10 14:20:39 2024
+Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Wed Jul 10 14:20:39 2024 ;
+; Revision Name          ; top                                   ;
+; Top-level Entity Name  ; max10_10m08_top                       ;
+; Family                 ; MAX 10                                ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Custom' contains:
+    Info: Programming output files
+    Info: Automatically detected source files
+    Info: Project source and settings files
+Warning: Hierarchical Platform Designer systems and custom IP components(_hw.tcl and associated files) are not archived by the Quartus Archiver
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/ptmch_V01.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'top.archive.rpt'
+Info (23030): Evaluation of Tcl script c:/intelfpga_lite/18.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4836 megabytes
+    Info: Processing ended: Wed Jul 10 14:20:39 2024
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
+
+
++-------------------------------------------------------------------------------------------------------+
+; Files Archived                                                                                        ;
++-------------------------------------------------------------------------------------------------------+
+; File Name                                                                                             ;
++-------------------------------------------------------------------------------------------------------+
+; max10.sdc                                                                                             ;
+; max10_10m08_top.sv                                                                                    ;
+; nios2_system.qsys                                                                                     ;
+; nios2_system.sopcinfo                                                                                 ;
+; nios2_system/nios2_system.bsf                                                                         ;
+; nios2_system/nios2_system.cmp                                                                         ;
+; nios2_system/nios2_system.html                                                                        ;
+; nios2_system/nios2_system.xml                                                                         ;
+; nios2_system/nios2_system_bb.v                                                                        ;
+; nios2_system/nios2_system_generation.rpt                                                              ;
+; nios2_system/nios2_system_generation_previous.rpt                                                     ;
+; nios2_system/nios2_system_inst.v                                                                      ;
+; nios2_system/nios2_system_inst.vhd                                                                    ;
+; nios2_system/synthesis/nios2_system.debuginfo                                                         ;
+; nios2_system/synthesis/nios2_system.qip                                                               ;
+; nios2_system/synthesis/nios2_system.regmap                                                            ;
+; nios2_system/synthesis/nios2_system.v                                                                 ;
+; nios2_system/synthesis/submodules/altera_avalon_i2c.v                                                 ;
+; nios2_system/synthesis/submodules/altera_avalon_i2c_clk_cnt.v                                         ;
+; nios2_system/synthesis/submodules/altera_avalon_i2c_condt_det.v                                       ;
+; nios2_system/synthesis/submodules/altera_avalon_i2c_condt_gen.v                                       ;
+; nios2_system/synthesis/submodules/altera_avalon_i2c_csr.v                                             ;
+; nios2_system/synthesis/submodules/altera_avalon_i2c_fifo.v                                            ;
+; nios2_system/synthesis/submodules/altera_avalon_i2c_mstfsm.v                                          ;
+; nios2_system/synthesis/submodules/altera_avalon_i2c_rxshifter.v                                       ;
+; nios2_system/synthesis/submodules/altera_avalon_i2c_spksupp.v                                         ;
+; nios2_system/synthesis/submodules/altera_avalon_i2c_txout.v                                           ;
+; nios2_system/synthesis/submodules/altera_avalon_i2c_txshifter.v                                       ;
+; nios2_system/synthesis/submodules/altera_avalon_sc_fifo.v                                             ;
+; nios2_system/synthesis/submodules/altera_avalon_st_clock_crosser.v                                    ;
+; nios2_system/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc                        ;
+; nios2_system/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v                          ;
+; nios2_system/synthesis/submodules/altera_avalon_st_pipeline_base.v                                    ;
+; nios2_system/synthesis/submodules/altera_irq_clock_crosser.sv                                         ;
+; nios2_system/synthesis/submodules/altera_merlin_arbitrator.sv                                         ;
+; nios2_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv                                 ;
+; nios2_system/synthesis/submodules/altera_merlin_master_agent.sv                                       ;
+; nios2_system/synthesis/submodules/altera_merlin_master_translator.sv                                  ;
+; nios2_system/synthesis/submodules/altera_merlin_slave_agent.sv                                        ;
+; nios2_system/synthesis/submodules/altera_merlin_slave_translator.sv                                   ;
+; nios2_system/synthesis/submodules/altera_modular_adc_control.sdc                                      ;
+; nios2_system/synthesis/submodules/altera_modular_adc_control.v                                        ;
+; nios2_system/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v                              ;
+; nios2_system/synthesis/submodules/altera_modular_adc_control_fsm.v                                    ;
+; nios2_system/synthesis/submodules/altera_modular_adc_sample_store.v                                   ;
+; nios2_system/synthesis/submodules/altera_modular_adc_sample_store_ram.v                               ;
+; nios2_system/synthesis/submodules/altera_modular_adc_sequencer.v                                      ;
+; nios2_system/synthesis/submodules/altera_modular_adc_sequencer_csr.v                                  ;
+; nios2_system/synthesis/submodules/altera_modular_adc_sequencer_ctrl.v                                 ;
+; nios2_system/synthesis/submodules/altera_onchip_flash.sdc                                             ;
+; nios2_system/synthesis/submodules/altera_onchip_flash.v                                               ;
+; nios2_system/synthesis/submodules/altera_onchip_flash_avmm_csr_controller.v                           ;
+; nios2_system/synthesis/submodules/altera_onchip_flash_avmm_data_controller.v                          ;
+; nios2_system/synthesis/submodules/altera_onchip_flash_util.v                                          ;
+; nios2_system/synthesis/submodules/altera_reset_controller.sdc                                         ;
+; nios2_system/synthesis/submodules/altera_reset_controller.v                                           ;
+; nios2_system/synthesis/submodules/altera_reset_synchronizer.v                                         ;
+; nios2_system/synthesis/submodules/altera_std_synchronizer_nocut.v                                     ;
+; nios2_system/synthesis/submodules/chsel_code_converter_sw_to_hw.v                                     ;
+; nios2_system/synthesis/submodules/fiftyfivenm_adcblock_primitive_wrapper.v                            ;
+; nios2_system/synthesis/submodules/fiftyfivenm_adcblock_top_wrapper.v                                  ;
+; nios2_system/synthesis/submodules/nios2_system_altpll_0.v                                             ;
+; nios2_system/synthesis/submodules/nios2_system_irq_mapper.sv                                          ;
+; nios2_system/synthesis/submodules/nios2_system_jtag_uart.v                                            ;
+; nios2_system/synthesis/submodules/nios2_system_ledpio.v                                               ;
+; nios2_system/synthesis/submodules/nios2_system_mm_interconnect_0.v                                    ;
+; nios2_system/synthesis/submodules/nios2_system_mm_interconnect_0_avalon_st_adapter.v                  ;
+; nios2_system/synthesis/submodules/nios2_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv ;
+; nios2_system/synthesis/submodules/nios2_system_mm_interconnect_0_cmd_demux.sv                         ;
+; nios2_system/synthesis/submodules/nios2_system_mm_interconnect_0_cmd_mux.sv                           ;
+; nios2_system/synthesis/submodules/nios2_system_mm_interconnect_0_router.sv                            ;
+; nios2_system/synthesis/submodules/nios2_system_mm_interconnect_0_router_002.sv                        ;
+; nios2_system/synthesis/submodules/nios2_system_mm_interconnect_0_rsp_demux.sv                         ;
+; nios2_system/synthesis/submodules/nios2_system_mm_interconnect_0_rsp_demux_002.sv                     ;
+; nios2_system/synthesis/submodules/nios2_system_mm_interconnect_0_rsp_demux_004.sv                     ;
+; nios2_system/synthesis/submodules/nios2_system_mm_interconnect_0_rsp_demux_005.sv                     ;
+; nios2_system/synthesis/submodules/nios2_system_mm_interconnect_0_rsp_demux_007.sv                     ;
+; nios2_system/synthesis/submodules/nios2_system_mm_interconnect_0_rsp_mux.sv                           ;
+; nios2_system/synthesis/submodules/nios2_system_modular_adc.v                                          ;
+; nios2_system/synthesis/submodules/nios2_system_modular_adc_0.v                                        ;
+; nios2_system/synthesis/submodules/nios2_system_nios2_cpu.v                                            ;
+; nios2_system/synthesis/submodules/nios2_system_nios2_cpu_cpu.sdc                                      ;
+; nios2_system/synthesis/submodules/nios2_system_nios2_cpu_cpu.v                                        ;
+; nios2_system/synthesis/submodules/nios2_system_nios2_cpu_cpu_debug_slave_sysclk.v                     ;
+; nios2_system/synthesis/submodules/nios2_system_nios2_cpu_cpu_debug_slave_tck.v                        ;
+; nios2_system/synthesis/submodules/nios2_system_nios2_cpu_cpu_debug_slave_wrapper.v                    ;
+; nios2_system/synthesis/submodules/nios2_system_nios2_cpu_cpu_ociram_default_contents.mif              ;
+; nios2_system/synthesis/submodules/nios2_system_nios2_cpu_cpu_rf_ram_a.mif                             ;
+; nios2_system/synthesis/submodules/nios2_system_nios2_cpu_cpu_rf_ram_b.mif                             ;
+; nios2_system/synthesis/submodules/nios2_system_nios2_cpu_cpu_test_bench.v                             ;
+; nios2_system/synthesis/submodules/nios2_system_onchip_memory.hex                                      ;
+; nios2_system/synthesis/submodules/nios2_system_onchip_memory.v                                        ;
+; nios2_system/synthesis/submodules/nios2_system_pio_0.v                                                ;
+; nios2_system/synthesis/submodules/nios2_system_uart.v                                                 ;
+; nios2_system/synthesis/submodules/rtl/altera_onchip_flash_block.v                                     ;
+; output_files/top.jdi                                                                                  ;
+; output_files/top.pof                                                                                  ;
+; output_files/top.sld                                                                                  ;
+; output_files/top.sof                                                                                  ;
+; rtl/ptmch/ptmch_top.sv                                                                                ;
+; rtl/ptmch/ptmch_trg.sv                                                                                ;
+; top.out.sdc                                                                                           ;
+; top.qpf                                                                                               ;
+; top.qsf                                                                                               ;
+; top_assignment_defaults.qdf                                                                           ;
++-------------------------------------------------------------------------------------------------------+
+
+
