@@ -15,19 +15,22 @@
 //=================================================================
 module ptmch_trg(
     // Reset/Clock
-    input  logic        RESET_N,
-    input  logic        CLK200M,
+    input  logic          RESET_N,
+    input  logic          CLK200M,
  //   input  logic        CLK100M,
     // Logic Interface
-    input  logic        SPI_CS,
-    input  logic        SPI_CLK,
-    input  logic        SPI_MOSI,
-    output logic        TRG_PLS
+    input  logic          SPI_CS,
+    input  logic          SPI_CLK,
+    input  logic          SPI_MOSI,
+    output logic [ 2: 0]  TRG_PLS
 );
 //=================================================================
 //  PARAMETER declarations
 //=================================================================
     parameter p_program_excute   = 8'h10;
+    parameter p_readstatus1      = 8'h0f;
+    parameter p_readstatus2      = 8'h05;
+    parameter p_128kb_blockerase = 8'hd8;
 //=================================================================
 //=================================================================
 //  Internal Signal
@@ -49,12 +52,20 @@ module ptmch_trg(
     logic          sr_cs_sync_sft1;
     logic          sr_cs_sync_sft2;
     logic          c_cs_edge_n;
+    logic          n_trg_pls;
 //=================================================================
 //  output Port
 //=================================================================
-    // pattern match
-    assign   c_inst_mch  = (sr_inst_chk_3d == p_program_excute)? 1'b1:
-                                                                1'b0;
+    // pattern match check
+    assign   c_inst_mch  = (sr_inst_chk_3d == p_program_excute | sr_inst_chk_3d == p_readstatus1 | sr_inst_chk_3d == p_readstatus2 | sr_inst_chk_3d == p_128kb_blockerase )? 1'b1:
+                                                                 1'b0;
+    // TRG_PLS Output sel
+    assign   TRG_PLS[0]  = (sr_inst_chk_3d == p_program_excute )? n_trg_pls:
+                                                                   1'b0;
+    assign   TRG_PLS[1]  = (sr_inst_chk_3d == p_readstatus1 | sr_inst_chk_3d == p_readstatus2)? n_trg_pls:
+                                                                                                1'b0;
+    assign   TRG_PLS[2]  = (sr_inst_chk_3d == p_128kb_blockerase )? n_trg_pls:
+                                                                    1'b0;
     assign   c_inst_edge = (c_inst_mch & ~sr_inst_mch_sft2);
     assign   c_cs_edge_n = (sr_cs_sync & ~sr_cs_sync_sft2);
 //=================================================================
@@ -193,23 +204,23 @@ module ptmch_trg(
     // TRG PLS time expander
     always @* begin
         case (sr_pls_cnt)
-            4'b0000 : TRG_PLS = 1'b1;
-            4'b0001 : TRG_PLS = 1'b1;
-            4'b0010 : TRG_PLS = 1'b1;
-            4'b0011 : TRG_PLS = 1'b1;
-            4'b0100 : TRG_PLS = 1'b1;
-            4'b0101 : TRG_PLS = 1'b1;
-            4'b0110 : TRG_PLS = 1'b1;
-            4'b0111 : TRG_PLS = 1'b1;
-            4'b1000 : TRG_PLS = 1'b1;
-            4'b1001 : TRG_PLS = 1'b1;
-            4'b1010 : TRG_PLS = 1'b1;
-            4'b1011 : TRG_PLS = 1'b1;
-            4'b1100 : TRG_PLS = 1'b1;
-            4'b1101 : TRG_PLS = 1'b1;
-            4'b1110 : TRG_PLS = 1'b1;
-            4'b1111 : TRG_PLS = 1'b0;
-        default : TRG_PLS = 1'b0;
+            4'b0000 : n_trg_pls = 1'b1;
+            4'b0001 : n_trg_pls = 1'b1;
+            4'b0010 : n_trg_pls = 1'b1;
+            4'b0011 : n_trg_pls = 1'b1;
+            4'b0100 : n_trg_pls = 1'b1;
+            4'b0101 : n_trg_pls = 1'b1;
+            4'b0110 : n_trg_pls = 1'b1;
+            4'b0111 : n_trg_pls = 1'b1;
+            4'b1000 : n_trg_pls = 1'b1;
+            4'b1001 : n_trg_pls = 1'b1;
+            4'b1010 : n_trg_pls = 1'b1;
+            4'b1011 : n_trg_pls = 1'b1;
+            4'b1100 : n_trg_pls = 1'b1;
+            4'b1101 : n_trg_pls = 1'b1;
+            4'b1110 : n_trg_pls = 1'b1;
+            4'b1111 : n_trg_pls = 1'b0;
+            default : n_trg_pls = 1'b0;
         endcase
     end
 endmodule

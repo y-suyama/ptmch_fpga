@@ -15,13 +15,13 @@
 //==================================================================================================
 module ptmch_top_tb();
     // Reset/Clock
-    logic        RESET_N;
-    logic        CLK200M;
+    logic         RESET_N;
+    logic         CLK200M;
     // SPI Interface
-    logic        SPI_CS;
-    logic        SPI_CLK;
-    logic        SPI_MOSI;
-    logic        TRG_PLS;
+    logic         SPI_CS;
+    logic         SPI_CLK;
+    logic         SPI_MOSI;
+    logic [ 2: 0] TRG_PLS;
 //==================================================================================================
 //  Structural coding
 //==================================================================================================
@@ -36,8 +36,8 @@ ptmch_top _ptmch_top(
 //==================================================================================================
 //  PARAMETER declarations
 //==================================================================================================
-    parameter cycle_200m         = 5;
-    parameter half_cycle_200m    = 2.5;
+    parameter cycle_200m         = 6.25;
+    parameter half_cycle_200m    = 3.125;
     parameter cycle_spi          = 10;
     parameter half_cycle_spi     = 5;
     parameter start_delay        = 100;
@@ -60,7 +60,7 @@ ptmch_top _ptmch_top(
         SPI_MOSI = 1'b1;
         #start_delay    RESET_N = 1'b0;
         #start_delay    RESET_N = 1'b1;
-        // 1 time
+        // program_excute 1 time
         #cs_delay       SPI_CS = 1'b0;
         #clk_delay      SPI_MOSI = 1'b0;//[7]
         #half_cycle_spi SPI_CLK = 1'b1;
@@ -105,7 +105,7 @@ ptmch_top _ptmch_top(
         #half_cycle_spi SPI_CLK = 1'b1;
         #half_cycle_spi SPI_CLK = 1'b0;
                         SPI_CS = 1'b1;
-        // 2 time
+        // program_excute 2 time
         #cs_delay       SPI_CS = 1'b0;
         #clk_delay      SPI_MOSI = 1'b0;//[7]
         #half_cycle_spi SPI_CLK = 1'b1;
@@ -150,7 +150,7 @@ ptmch_top _ptmch_top(
         #half_cycle_spi SPI_CLK = 1'b1;
         #half_cycle_spi SPI_CLK = 1'b0;
                         SPI_CS = 1'b1;
-        // 3 time
+        // program_excute 3 time
         #cs_delay       SPI_CS = 1'b0;
         #clk_delay      SPI_MOSI = 1'b0;//[7]
         #half_cycle_spi SPI_CLK = 1'b1;
@@ -165,6 +165,276 @@ ptmch_top _ptmch_top(
         #half_cycle_spi SPI_CLK = 1'b1;
         #half_cycle_spi SPI_CLK = 1'b0;
                         SPI_MOSI = 1'b0;//[3]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[2]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[1]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[0]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_CS = 1'b1;
+        // readstatus 1 time
+        #cs_delay       SPI_CS = 1'b0;
+        #clk_delay      SPI_MOSI = 1'b0;//[7]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[6]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[5]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[4]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[3]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[2]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[1]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[0]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_CS = 1'b1;
+        // readstatus 2 time
+        #cs_delay       SPI_CS = 1'b0;
+        #clk_delay      SPI_MOSI = 1'b0;//[7]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[6]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[5]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[4]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[3]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[2]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[1]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[0]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_CS = 1'b1;
+        // readstatus 3 time
+        #cs_delay       SPI_CS = 1'b0;
+        #clk_delay      SPI_MOSI = 1'b0;//[7]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[6]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[5]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[4]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[3]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[2]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[1]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[0]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_CS = 1'b1;
+        // 128kb_blockerase 1 time
+        #cs_delay       SPI_CS = 1'b0;
+        #clk_delay      SPI_MOSI = 1'b1;//[7]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[6]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[5]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[4]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[3]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[2]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[1]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[0]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_CS = 1'b1;
+        // 128kb_blockerase 2 time
+        #cs_delay       SPI_CS = 1'b0;
+        #clk_delay      SPI_MOSI = 1'b0;//[7]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[6]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[5]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[4]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[3]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[2]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[1]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[0]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_CS = 1'b1;
+        // 128kb_blockerase 3 time
+        #cs_delay       SPI_CS = 1'b0;
+        #clk_delay      SPI_MOSI = 1'b1;//[7]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[6]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[5]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[4]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[3]
         #half_cycle_spi SPI_CLK = 1'b1;
         #half_cycle_spi SPI_CLK = 1'b0;
                         SPI_MOSI = 1'b0;//[2]

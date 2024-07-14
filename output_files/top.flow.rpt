@@ -1,5 +1,5 @@
 Flow report for top
-Wed Jul 10 21:45:50 2024
+Sat Jul 13 22:03:51 2024
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -41,24 +41,24 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Jul 10 21:45:50 2024       ;
+; Flow Status                        ; Successful - Sat Jul 13 22:03:51 2024       ;
 ; Quartus Prime Version              ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
 ; Revision Name                      ; top                                         ;
 ; Top-level Entity Name              ; max10_10m08_top                             ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M08SAE144C8G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 77 / 8,064 ( < 1 % )                        ;
+;     Total combinational functions  ; 66 / 8,064 ( < 1 % )                        ;
+;     Dedicated logic registers      ; 55 / 8,064 ( < 1 % )                        ;
+; Total registers                    ; 55                                          ;
+; Total pins                         ; 8 / 101 ( 8 % )                             ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0 / 387,072 ( 0 % )                         ;
+; Embedded Multiplier 9-bit elements ; 0 / 48 ( 0 % )                              ;
+; Total PLLs                         ; 1 / 1 ( 100 % )                             ;
+; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
+; ADC blocks                         ; 0 / 1 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -67,63 +67,87 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/10/2024 21:43:03 ;
+; Start date & time ; 07/13/2024 22:02:03 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; top                 ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                ;
-+-------------------------------------+----------------------------------------+---------------+-----------------+----------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name     ; Section Id     ;
-+-------------------------------------+----------------------------------------+---------------+-----------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 90274928606859.172061538302848         ; --            ; --              ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --              ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --              ; --             ;
-; FLOW_ENABLE_POWER_ANALYZER          ; On                                     ; Off           ; --              ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --              ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --              ; --             ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 3.3V                                   ; --            ; --              ; --             ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                      ; --            ; --              ; --             ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                      ; --            ; --              ; --             ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                             ; --            ; --              ; --             ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                             ; --            ; --              ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; max10_10m08_top ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; max10_10m08_top ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; max10_10m08_top ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --              ; --             ;
-; POWER_DEFAULT_INPUT_IO_TOGGLE_RATE  ; 12.5 %                                 ; 12.5%         ; --              ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --              ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --              ; --             ;
-; TOP_LEVEL_ENTITY                    ; max10_10m08_top                        ; top           ; --              ; --             ;
-; VCCA_USER_VOLTAGE                   ; 3.3V                                   ; --            ; --              ; --             ;
-+-------------------------------------+----------------------------------------+---------------+-----------------+----------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                         ;
++----------------------------------------------+----------------------------------------+---------------+-----------------+----------------+
+; Assignment Name                              ; Value                                  ; Default Value ; Entity Name     ; Section Id     ;
++----------------------------------------------+----------------------------------------+---------------+-----------------+----------------+
+; ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP          ; On                                     ; Off           ; --              ; --             ;
+; COMPILER_SIGNATURE_ID                        ; 90274928606859.172087572310104         ; --            ; --              ; --             ;
+; CYCLONEII_OPTIMIZATION_TECHNIQUE             ; Speed                                  ; Balanced      ; --              ; --             ;
+; EDA_OUTPUT_DATA_FORMAT                       ; Verilog Hdl                            ; --            ; --              ; eda_simulation ;
+; EDA_SIMULATION_TOOL                          ; ModelSim-Altera (Verilog)              ; <None>        ; --              ; --             ;
+; FLOW_ENABLE_POWER_ANALYZER                   ; On                                     ; Off           ; --              ; --             ;
+; MAX_CORE_JUNCTION_TEMP                       ; 85                                     ; --            ; --              ; --             ;
+; MIN_CORE_JUNCTION_TEMP                       ; 0                                      ; --            ; --              ; --             ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE                  ; 3.3V                                   ; --            ; --              ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS               ; Half Signal Swing                      ; --            ; --              ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS               ; Half Signal Swing                      ; --            ; --              ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS              ; Half Vccio                             ; --            ; --              ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS              ; Half Vccio                             ; --            ; --              ; --             ;
+; PARTITION_COLOR                              ; -- (Not supported for targeted family) ; --            ; max10_10m08_top ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL          ; -- (Not supported for targeted family) ; --            ; max10_10m08_top ; Top            ;
+; PARTITION_NETLIST_TYPE                       ; -- (Not supported for targeted family) ; --            ; max10_10m08_top ; Top            ;
+; PHYSICAL_SYNTHESIS_COMBO_LOGIC               ; On                                     ; Off           ; --              ; --             ;
+; PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION      ; On                                     ; Off           ; --              ; --             ;
+; PHYSICAL_SYNTHESIS_REGISTER_RETIMING         ; On                                     ; Off           ; --              ; --             ;
+; POWER_BOARD_THERMAL_MODEL                    ; None (CONSERVATIVE)                    ; --            ; --              ; --             ;
+; POWER_DEFAULT_INPUT_IO_TOGGLE_RATE           ; 12.5 %                                 ; 12.5%         ; --              ; --             ;
+; POWER_PRESET_COOLING_SOLUTION                ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --              ; --             ;
+; PROJECT_OUTPUT_DIRECTORY                     ; output_files                           ; --            ; --              ; --             ;
+; QII_AUTO_PACKED_REGISTERS                    ; Normal                                 ; Auto          ; --              ; --             ;
+; ROUTER_LCELL_INSERTION_AND_LOGIC_DUPLICATION ; On                                     ; Auto          ; --              ; --             ;
+; ROUTER_TIMING_OPTIMIZATION_LEVEL             ; MAXIMUM                                ; Normal        ; --              ; --             ;
+; SMART_RECOMPILE                              ; On                                     ; Off           ; --              ; --             ;
+; TOP_LEVEL_ENTITY                             ; max10_10m08_top                        ; top           ; --              ; --             ;
+; VCCA_USER_VOLTAGE                            ; 3.3V                                   ; --            ; --              ; --             ;
++----------------------------------------------+----------------------------------------+---------------+-----------------+----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                          ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:02:48     ; 1.0                     ; 4893 MB             ; 00:04:24                           ;
-; Total                  ; 00:02:48     ; --                      ; --                  ; 00:04:24                           ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:01:12     ; 1.0                     ; 4811 MB             ; 00:01:56                           ;
+; Fitter               ; 00:00:14     ; 1.0                     ; 5278 MB             ; 00:00:15                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4674 MB             ; 00:00:02                           ;
+; Power Analyzer       ; 00:00:04     ; 1.0                     ; 4783 MB             ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.0                     ; 4749 MB             ; 00:00:06                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4627 MB             ; 00:00:02                           ;
+; Total                ; 00:01:41     ; --                      ; --                  ; 00:02:25                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                      ;
-+------------------------+------------------+------------+------------+----------------+
-; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+------------------------+------------------+------------+------------+----------------+
-; Analysis & Elaboration ; suyama           ; Windows 10 ; 10.0       ; x86_64         ;
-+------------------------+------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; suyama           ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; suyama           ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; suyama           ; Windows 10 ; 10.0       ; x86_64         ;
+; Power Analyzer       ; suyama           ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; suyama           ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; suyama           ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off top -c top --analysis_and_elaboration
+quartus_map --read_settings_files=on --write_settings_files=off top -c top
+quartus_fit --read_settings_files=off --write_settings_files=off top -c top
+quartus_asm --read_settings_files=off --write_settings_files=off top -c top
+quartus_pow --read_settings_files=off --write_settings_files=off top -c top
+quartus_sta top -c top
+quartus_eda --read_settings_files=off --write_settings_files=off top -c top
 
 
 
