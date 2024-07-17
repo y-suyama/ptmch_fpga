@@ -49,78 +49,8 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 2
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)" -tag platform
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation -tag platform
-set_location_assignment PIN_29 -to DIFFIO_L20P_CLK1P -tag platform
-set_location_assignment PIN_32 -to DIFFIO_L27N_PLL_CLKOUTN -tag platform
-set_location_assignment PIN_33 -to DIFFIO_L27P_PLL_CLKOUTP -tag platform
-set_location_assignment PIN_62 -to Arduino_IO8 -tag platform
-set_location_assignment PIN_64 -to Arduino_IO9 -tag platform
-set_location_assignment PIN_65 -to Arduino_IO10 -tag platform
-set_location_assignment PIN_66 -to Arduino_IO11 -tag platform
-set_location_assignment PIN_69 -to Arduino_IO12 -tag platform
-set_location_assignment PIN_70 -to Arduino_IO13 -tag platform
-set_location_assignment PIN_75 -to Arduino_IO1 -tag platform
-set_location_assignment PIN_74 -to Arduino_IO0 -tag platform
-set_location_assignment PIN_77 -to Arduino_IO3 -tag platform
-set_location_assignment PIN_76 -to Arduino_IO2 -tag platform
-set_location_assignment PIN_79 -to Arduino_IO4 -tag platform
-set_location_assignment PIN_81 -to Arduino_IO5 -tag platform
-set_location_assignment PIN_84 -to Arduino_IO6 -tag platform
-set_location_assignment PIN_86 -to Arduino_IO7 -tag platform
-set_location_assignment PIN_90 -to DIFFIO_R16P_CLK3P -tag platform
-set_location_assignment PIN_91 -to DIFFIO_R16N_CLK3N -tag platform
-set_location_assignment PIN_100 -to DIFFIO_R28P -tag platform
-set_location_assignment PIN_101 -to DIFFIO_R27N -tag platform
-set_location_assignment PIN_102 -to DIFFIO_R28N -tag platform
-set_location_assignment PIN_105 -to DIFFIO_R33P -tag platform
-set_location_assignment PIN_106 -to DIFFIO_R33N -tag platform
-set_location_assignment PIN_110 -to DIFFIO_T1P -tag platform
-set_location_assignment PIN_111 -to DIFFIO_T1N -tag platform
-set_location_assignment PIN_113 -to DIFFIO_T4N -tag platform
-set_location_assignment PIN_114 -to DIFFIO_T6P -tag platform
-set_location_assignment PIN_118 -to DIFFIO_T10P -tag platform
-set_location_assignment PIN_119 -to DIFFIO_T10N -tag platform
-set_location_assignment PIN_120 -to SWITCH1 -tag platform
 set_location_assignment PIN_121 -to RESET_N -tag platform
-set_location_assignment PIN_124 -to SWITCH2 -tag platform
-set_location_assignment PIN_127 -to SWITCH3 -tag platform
-set_location_assignment PIN_130 -to SWITCH4 -tag platform
-set_location_assignment PIN_131 -to SWITCH5 -tag platform
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DIFFIO_L20P_CLK1P
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DIFFIO_L27N_PLL_CLKOUTN
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DIFFIO_L27P_PLL_CLKOUTP
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Arduino_IO8
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Arduino_IO9
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Arduino_IO10
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Arduino_IO11
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Arduino_IO12
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Arduino_IO13
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Arduino_IO1
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Arduino_IO0
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Arduino_IO3
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Arduino_IO2
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Arduino_IO4
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Arduino_IO5
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Arduino_IO6
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Arduino_IO7
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DIFFIO_R16P_CLK3P
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DIFFIO_R16N_CLK3N
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DIFFIO_R28P
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DIFFIO_R27N
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DIFFIO_R28N
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DIFFIO_R33P
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DIFFIO_R33N
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DIFFIO_T1P
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DIFFIO_T1N
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DIFFIO_T4N
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DIFFIO_T6P
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DIFFIO_T10P
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DIFFIO_T10N
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SWITCH1
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to RESET_N
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SWITCH2
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SWITCH3
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SWITCH4
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SWITCH5
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name FLOW_ENABLE_POWER_ANALYZER ON
@@ -135,25 +65,7 @@ set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
-set_location_assignment PIN_96 -to TXD_OUT
-set_location_assignment PIN_98 -to RXD_IN
 set_location_assignment PIN_27 -to CLK50M
-set_location_assignment PIN_47 -to I2C_SCL
-set_location_assignment PIN_46 -to I2C_SDA
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to I2C_SCL
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to DIFFIO_T10P
-set_location_assignment PIN_99 -to SGTP_CLK
-set_location_assignment PIN_93 -to SGTP_DAT[3]
-set_location_assignment PIN_92 -to SGTP_DAT[2]
-set_location_assignment PIN_89 -to SGTP_DAT[1]
-set_location_assignment PIN_88 -to SGTP_DAT[0]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SGTP_CLK
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SGTP_DAT[3]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to RXD_IN
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SGTP_DAT[2]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SGTP_DAT[1]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SGTP_DAT[0]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SGTP_DAT
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top -tag platform
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top -tag platform
@@ -161,14 +73,6 @@ set_location_assignment PIN_60 -to SPI_CLK
 set_location_assignment PIN_59 -to SPI_CS
 set_location_assignment PIN_58 -to SPI_MOSI
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to TRG_PLS
-set_location_assignment PIN_16 -to altera_reserved_tms
-set_location_assignment PIN_18 -to altera_reserved_tck
-set_location_assignment PIN_19 -to altera_reserved_tdi
-set_location_assignment PIN_20 -to altera_reserved_tdo
-set_location_assignment PIN_126 -to ~ALTERA_CONFIG_SEL~
-set_location_assignment PIN_129 -to ~ALTERA_nCONFIG~
-set_location_assignment PIN_136 -to ~ALTERA_nSTATUS~
-set_location_assignment PIN_138 -to ~ALTERA_CONF_DONE~
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/tb/ptmch_top_tb.sv
 set_global_assignment -name QSYS_FILE nios2_system.qsys
 set_global_assignment -name SYSTEMVERILOG_FILE max10_10m08_top.sv
@@ -177,7 +81,9 @@ set_global_assignment -name SDC_FILE max10.sdc
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/ptmch/ptmch_top.sv
 set_location_assignment PIN_56 -to TRG_PLS[1]
 set_location_assignment PIN_55 -to TRG_PLS[2]
+set_location_assignment PIN_54 -to TRG_PLS[3]
 set_location_assignment PIN_57 -to TRG_PLS[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to TRG_PLS[3]
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to TRG_PLS[2]
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to TRG_PLS[1]
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to TRG_PLS[0]

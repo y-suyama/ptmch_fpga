@@ -21,12 +21,12 @@ module max10_10m08_top(
     input  logic         SPI_CS,
     input  logic         SPI_CLK,
     input  logic         SPI_MOSI,
-    output logic [ 2: 0] TRG_PLS
+    output logic [ 3: 0] TRG_PLS
 );
 //=================================================================
 //  Internal Signal
 //=================================================================
-    logic  w_clk200m;
+    logic  w_clk160m;
 //=================================================================
 //  output Port
 //=================================================================
@@ -37,13 +37,13 @@ module max10_10m08_top(
 nios2_system u0(
     .clock_clk                    (CLK50M),
     .reset_n_reset_n              (RESET_N),
-    .altpll_0_c1_clk              (w_clk200m)
+    .altpll_0_c1_clk              (w_clk160m)
    );
 
 ptmch_top ptmch_inst(
     // Reset/Clock
     .RESET_N(RESET_N),
-    .CLK200M(w_clk200m),
+    .CLK160M(w_clk160m),
     // SPI Interface
     .SPI_CS(SPI_CS),
     .SPI_CLK(SPI_CLK),

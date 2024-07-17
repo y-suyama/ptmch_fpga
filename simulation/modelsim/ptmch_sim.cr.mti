@@ -12,9 +12,10 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	ptmch_top
 
-} {} {}} C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/rtl/ptmch/ptmch_trg.sv {1 {vlog -work work -sv -stats=none C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/rtl/ptmch/ptmch_trg.sv
+} {} {}} C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/rtl/ptmch/ptmch_trg.sv {2 {vlog -work work -sv -stats=none C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/rtl/ptmch/ptmch_trg.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module ptmch_trg
+** Warning: C:/Users/suyama84/Documents/fpga/max10_10m08_ptmch/rtl/ptmch/ptmch_trg.sv(34): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 
 Top level modules:
 	ptmch_trg

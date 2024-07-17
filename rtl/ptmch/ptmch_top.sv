@@ -16,13 +16,13 @@
 module ptmch_top(
     // Reset/Clock
     input  logic          RESET_N,
-    input  logic          CLK200M,
+    input  logic          CLK160M,
  //   input  logic        CLK100M,
     // SPI Interface
     input  logic          SPI_CS,
     input  logic          SPI_CLK,
     input  logic          SPI_MOSI,
-    output logic [ 2: 0]  TRG_PLS
+    output logic [ 3: 0]  TRG_PLS
 );
 //==================================================================================================
 //  PARAMETER declarations
@@ -42,7 +42,7 @@ module ptmch_top(
 
 ptmch_trg trg_inst(
     .RESET_N(RESET_N),
-    .CLK200M(CLK200M),
+    .CLK160M(CLK160M),
     .SPI_CS(SPI_CS),
     .SPI_CLK(SPI_CLK),
     .SPI_MOSI(SPI_MOSI),

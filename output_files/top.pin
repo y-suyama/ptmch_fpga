@@ -123,7 +123,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 50        :        :                   :      
 VCC_ONE                      : 51        : power  :                   : 3.0V/3.3V :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 52        :        :                   :         : 3         :                
 GND                          : 53        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 54        :        :                   :         : 3         :                
+TRG_PLS[3]                   : 54        : output : 3.3-V LVCMOS      :         : 3         : Y              
 TRG_PLS[2]                   : 55        : output : 3.3-V LVCMOS      :         : 3         : Y              
 TRG_PLS[1]                   : 56        : output : 3.3-V LVCMOS      :         : 3         : Y              
 TRG_PLS[0]                   : 57        : output : 3.3-V LVCMOS      :         : 3         : Y              
@@ -195,19 +195,19 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 122       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : 123       :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 124       :        :                   :         : 8         :                
 GND                          : 125       : gnd    :                   :         :           :                
-~ALTERA_CONFIG_SEL~ / RESERVED_INPUT : 126       : input  : 3.3-V LVCMOS      :         : 8         : Y              
+~ALTERA_CONFIG_SEL~ / RESERVED_INPUT : 126       : input  : 3.3-V LVCMOS      :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 127       :        :                   :         : 8         :                
 VCCIO8                       : 128       : power  :                   : 3.3V    : 8         :                
-~ALTERA_nCONFIG~ / RESERVED_INPUT : 129       : input  : 3.3 V Schmitt Trigger :         : 8         : Y              
+~ALTERA_nCONFIG~ / RESERVED_INPUT : 129       : input  : 3.3 V Schmitt Trigger :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 130       :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 131       :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 132       :        :                   :         : 8         :                
 GND                          : 133       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 134       :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 135       :        :                   :         : 8         :                
-~ALTERA_nSTATUS~ / RESERVED_INPUT : 136       : input  : 3.3 V Schmitt Trigger :         : 8         : Y              
+~ALTERA_nSTATUS~ / RESERVED_INPUT : 136       : input  : 3.3 V Schmitt Trigger :         : 8         : N              
 GND                          : 137       : gnd    :                   :         :           :                
-~ALTERA_CONF_DONE~ / RESERVED_INPUT : 138       : input  : 3.3 V Schmitt Trigger :         : 8         : Y              
+~ALTERA_CONF_DONE~ / RESERVED_INPUT : 138       : input  : 3.3 V Schmitt Trigger :         : 8         : N              
 VCCIO8                       : 139       : power  :                   : 3.3V    : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 140       :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 141       :        :                   :         : 8         :                

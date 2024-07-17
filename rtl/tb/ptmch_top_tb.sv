@@ -16,18 +16,18 @@
 module ptmch_top_tb();
     // Reset/Clock
     logic         RESET_N;
-    logic         CLK200M;
+    logic         CLK160M;
     // SPI Interface
     logic         SPI_CS;
     logic         SPI_CLK;
     logic         SPI_MOSI;
-    logic [ 2: 0] TRG_PLS;
+    logic [ 3: 0] TRG_PLS;
 //==================================================================================================
 //  Structural coding
 //==================================================================================================
 ptmch_top _ptmch_top(
     .RESET_N(RESET_N),
-    .CLK200M(CLK200M),
+    .CLK160M(CLK160M),
     .SPI_CS(SPI_CS),
     .SPI_CLK(SPI_CLK),
     .SPI_MOSI(SPI_MOSI),
@@ -36,8 +36,8 @@ ptmch_top _ptmch_top(
 //==================================================================================================
 //  PARAMETER declarations
 //==================================================================================================
-    parameter cycle_200m         = 6.25;
-    parameter half_cycle_200m    = 3.125;
+    parameter cycle_160m         = 6.25;
+    parameter half_cycle_160m    = 3.125;
     parameter cycle_spi          = 10;
     parameter half_cycle_spi     = 5;
     parameter start_delay        = 100;
@@ -47,14 +47,14 @@ ptmch_top _ptmch_top(
 //  RESET/Clock
 //==================================================================================================
     // PLL Clock 200MHz
-    always #half_cycle_200m CLK200M = ~CLK200M;
+    always #half_cycle_160m CLK160M = ~CLK160M;
 //==================================================================================================
 //  Initial
 //==================================================================================================
     initial begin
 
         RESET_N  = 1'b1;
-        CLK200M  = 1'b1;
+        CLK160M  = 1'b1;
         SPI_CS   = 1'b1;
         SPI_CLK  = 1'b0;
         SPI_MOSI = 1'b1;
@@ -444,6 +444,141 @@ ptmch_top _ptmch_top(
         #half_cycle_spi SPI_CLK = 1'b1;
         #half_cycle_spi SPI_CLK = 1'b0;
                         SPI_MOSI = 1'b0;//[0]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_CS = 1'b1;
+        // pagedata_read 1 time
+        #cs_delay       SPI_CS = 1'b0;
+        #clk_delay      SPI_MOSI = 1'b0;//[7]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[6]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[5]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[4]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[3]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[2]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[1]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[0]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_CS = 1'b1;
+        // pagedata_read 2 time
+        #cs_delay       SPI_CS = 1'b0;
+        #clk_delay      SPI_MOSI = 1'b0;//[7]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[6]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[5]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[4]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[3]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[2]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[1]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[0]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_CS = 1'b1;
+        // pagedata_read 3 time
+        #cs_delay       SPI_CS = 1'b0;
+        #clk_delay      SPI_MOSI = 1'b0;//[7]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[6]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[5]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[4]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[3]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[2]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[1]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b1;//[0]
         #half_cycle_spi SPI_CLK = 1'b1;
         #half_cycle_spi SPI_CLK = 1'b0;
         #half_cycle_spi SPI_CLK = 1'b1;

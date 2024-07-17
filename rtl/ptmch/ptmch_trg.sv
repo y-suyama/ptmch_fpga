@@ -16,13 +16,13 @@
 module ptmch_trg(
     // Reset/Clock
     input  logic          RESET_N,
-    input  logic          CLK200M,
+    input  logic          CLK160M,
  //   input  logic        CLK100M,
     // Logic Interface
     input  logic          SPI_CS,
     input  logic          SPI_CLK,
     input  logic          SPI_MOSI,
-    output logic [ 2: 0]  TRG_PLS
+    output logic [ 3: 0]  TRG_PLS
 );
 //=================================================================
 //  PARAMETER declarations
@@ -31,6 +31,7 @@ module ptmch_trg(
     parameter p_readstatus1      = 8'h0f;
     parameter p_readstatus2      = 8'h05;
     parameter p_128kb_blockerase = 8'hd8;
+    parameter p_pagedata_read    = 8'hd13;
 //=================================================================
 //=================================================================
 //  Internal Signal
@@ -51,13 +52,13 @@ module ptmch_trg(
     logic          sr_cs_sync;
     logic          sr_cs_sync_sft1;
     logic          sr_cs_sync_sft2;
-    logic          c_cs_edge_n;
+    logic          c_cs_edge;
     logic          n_trg_pls;
 //=================================================================
 //  output Port
 //=================================================================
     // pattern match check
-    assign   c_inst_mch  = (sr_inst_chk_3d == p_program_excute | sr_inst_chk_3d == p_readstatus1 | sr_inst_chk_3d == p_readstatus2 | sr_inst_chk_3d == p_128kb_blockerase )? 1'b1:
+    assign   c_inst_mch  = (sr_inst_chk_3d == p_program_excute | sr_inst_chk_3d == p_readstatus1 | sr_inst_chk_3d == p_readstatus2 | sr_inst_chk_3d == p_128kb_blockerase | sr_inst_chk_3d == p_pagedata_read)? 1'b1:
                                                                  1'b0;
     // TRG_PLS Output sel
     assign   TRG_PLS[0]  = (sr_inst_chk_3d == p_program_excute )? n_trg_pls:
@@ -66,25 +67,27 @@ module ptmch_trg(
                                                                                                 1'b0;
     assign   TRG_PLS[2]  = (sr_inst_chk_3d == p_128kb_blockerase )? n_trg_pls:
                                                                     1'b0;
+    assign   TRG_PLS[3]  = (sr_inst_chk_3d == p_pagedata_read )? n_trg_pls:
+                                                                    1'b0;
     assign   c_inst_edge = (c_inst_mch & ~sr_inst_mch_sft2);
-    assign   c_cs_edge_n = (sr_cs_sync & ~sr_cs_sync_sft2);
+    assign   c_cs_edge = (sr_cs_sync & ~sr_cs_sync_sft2);
 //=================================================================
 //  Structural coding
 //=================================================================
     // CS Shift Register
-    always_ff @(posedge SPI_CLK or negedge RESET_N or posedge c_cs_edge_n) begin
+    always_ff @(posedge SPI_CLK or negedge RESET_N or posedge c_cs_edge) begin
         if(!RESET_N)
             sr_inst_sht  <= 8'h0;
-        else if(c_cs_edge_n == 1'b1)  // CLR
+        else if(c_cs_edge == 1'b1)  // CLR
             sr_inst_sht  <= 8'h0;
         else
             sr_inst_sht[7:0]  <= {sr_inst_sht[6:0],SPI_MOSI};
     end
     //  Instraction COUNTER
-    always_ff @(posedge SPI_CLK or negedge RESET_N or posedge c_cs_edge_n) begin
+    always_ff @(posedge SPI_CLK or negedge RESET_N or posedge c_cs_edge) begin
         if(!RESET_N)
             sr_inst_cnt  <= 4'b1001;
-        else if(c_cs_edge_n == 1'b1)  // CLR
+        else if(c_cs_edge == 1'b1)  // CLR
                 sr_inst_cnt  <= 4'b0;
         else
             if(sr_inst_cnt == 4'b1001 )// STOP
@@ -93,69 +96,52 @@ module ptmch_trg(
                 sr_inst_cnt <= sr_inst_cnt + 1'b1;
       end
     // Instraction chk(async)
-    always_ff @(posedge CLK200M or negedge RESET_N) begin
-        if(!RESET_N)
+    always_ff @(posedge CLK160M or negedge RESET_N or posedge c_cs_edge) begin
+        if(!RESET_N | c_cs_edge == 1'b1)
             ar_inst_chk  <= 8'h0;
         else
-            if (c_cs_edge_n == 1'b1) // CLR
-                ar_inst_chk  <= 8'h0;
-            else if(sr_inst_cnt == 4'b1000 ) // Load          
+            if(sr_inst_cnt == 4'b1000 ) // Load          
                 ar_inst_chk  <= sr_inst_sht;
             else
                 ar_inst_chk  <= ar_inst_chk;
     end
     // Instraction chk(1d)
-    always_ff @(posedge CLK200M or negedge RESET_N) begin
-        if(!RESET_N)
+    always_ff @(posedge CLK160M or negedge RESET_N or posedge c_cs_edge) begin
+        if(!RESET_N | c_cs_edge == 1'b1)
             sr_inst_chk_1d  <= 8'h0;
         else
-            if (c_cs_edge_n == 1'b1) // CLR
-                sr_inst_chk_1d  <= 8'h0;
-            else
-                sr_inst_chk_1d  <= ar_inst_chk;
+            sr_inst_chk_1d  <= ar_inst_chk;
     end
     // Instraction chk(2d)
-    always_ff @(posedge CLK200M or negedge RESET_N) begin
-        if(!RESET_N)
-            sr_inst_chk_2d  <= 8'h0;
+    always_ff @(posedge CLK160M or negedge RESET_N or posedge c_cs_edge) begin
+        if(!RESET_N | c_cs_edge == 1'b1)
+           sr_inst_chk_2d  <= 8'h0;
         else
-            if (c_cs_edge_n == 1'b1) // CLR
-                sr_inst_chk_2d  <= 8'h0;
-            else
-                sr_inst_chk_2d  <= sr_inst_chk_1d;
+            sr_inst_chk_2d  <= sr_inst_chk_1d;
     end
     // Instraction chk(3d)
-    always_ff @(posedge CLK200M or negedge RESET_N) begin
-        if(!RESET_N)
+    always_ff @(posedge CLK160M or negedge RESET_N or posedge c_cs_edge) begin
+        if(!RESET_N | c_cs_edge == 1'b1)
             sr_inst_chk_3d  <= 8'h0;
         else
-            if (c_cs_edge_n == 1'b1) // CLR
-                sr_inst_chk_3d  <= 8'h0;
-            else
-                sr_inst_chk_3d  <= sr_inst_chk_2d;
+            sr_inst_chk_3d  <= sr_inst_chk_2d;
     end
     // Instracton Match pls(async)
-    always_ff @(posedge CLK200M or negedge RESET_N) begin
-        if(!RESET_N)
+    always_ff @(posedge CLK160M or negedge RESET_N or posedge c_cs_edge) begin
+        if(!RESET_N | c_cs_edge == 1'b1)
             ar_inst_mch_sft1  <= 1'b0;
         else
-            if (c_cs_edge_n == 1'b1) // CLR
-                ar_inst_mch_sft1  <= 1'b0;
-            else           
-                ar_inst_mch_sft1  <= c_inst_mch;
+            ar_inst_mch_sft1  <= c_inst_mch;
     end
     // Instracton Match pls(sync)
-    always_ff @(posedge CLK200M or negedge RESET_N) begin
-        if(!RESET_N)
+    always_ff @(posedge CLK160M or negedge RESET_N or posedge c_cs_edge) begin
+        if(!RESET_N | c_cs_edge == 1'b1)
             sr_inst_mch_sft2  <= 1'b0;
         else
-            if (c_cs_edge_n == 1'b1) // CLR
-                sr_inst_mch_sft2  <= 1'b0;
-            else           
-                sr_inst_mch_sft2  <= ar_inst_mch_sft1;
+            sr_inst_mch_sft2  <= ar_inst_mch_sft1;
     end
     //  TRG PLS COUNTER
-    always_ff @(posedge CLK200M or negedge RESET_N) begin
+    always_ff @(posedge CLK160M or negedge RESET_N) begin
         if(!RESET_N)
             sr_pls_cnt  <= 4'b1111;
         else
@@ -167,35 +153,35 @@ module ptmch_trg(
                 sr_pls_cnt <= sr_pls_cnt + 1'b1;
       end
     // SPI CS(async 1d)
-    always_ff @(posedge CLK200M or negedge RESET_N) begin
+    always_ff @(posedge CLK160M or negedge RESET_N) begin
         if(!RESET_N)
             ar_spi_cs_1d  <= 1'h0;
         else
             ar_spi_cs_1d  <= SPI_CS;
     end
     // SPI CS(sync 2d)
-    always_ff @(posedge CLK200M or negedge RESET_N) begin
+    always_ff @(posedge CLK160M or negedge RESET_N) begin
         if(!RESET_N)
             sr_spi_cs_2d  <= 1'h0;
         else
             sr_spi_cs_2d  <= ar_spi_cs_1d;
     end
     // SPI CS(sync 3d)
-    always_ff @(posedge CLK200M or negedge RESET_N) begin
+    always_ff @(posedge CLK160M or negedge RESET_N) begin
         if(!RESET_N)
             sr_cs_sync  <= 1'h0;
         else
             sr_cs_sync  <= sr_spi_cs_2d;
     end
     // SPI CS(sft 1d)
-    always_ff @(posedge CLK200M or negedge RESET_N) begin
+    always_ff @(posedge CLK160M or negedge RESET_N) begin
         if(!RESET_N)
             sr_cs_sync_sft1  <= 1'h0;
         else
             sr_cs_sync_sft1  <= sr_cs_sync;
     end
     // SPI CS(sft 2d)
-    always_ff @(posedge CLK200M or negedge RESET_N) begin
+    always_ff @(posedge CLK160M or negedge RESET_N) begin
         if(!RESET_N)
             sr_cs_sync_sft2  <= 1'h0;
         else

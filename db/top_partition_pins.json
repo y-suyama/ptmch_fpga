@@ -16,6 +16,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "TRG_PLS[3]",
+					"strict" : false
+				},
+				{
 					"name" : "RESET_N",
 					"strict" : false
 				},
@@ -24,11 +28,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SPI_MOSI",
+					"name" : "SPI_CLK",
 					"strict" : false
 				},
 				{
-					"name" : "SPI_CLK",
+					"name" : "SPI_MOSI",
 					"strict" : false
 				}
 			]
