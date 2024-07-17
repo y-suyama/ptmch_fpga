@@ -121,7 +121,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 48        :        :                   :      
 VCCIO3                       : 49        : power  :                   : 3.3V    : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 50        :        :                   :         : 3         :                
 VCC_ONE                      : 51        : power  :                   : 3.0V/3.3V :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 52        :        :                   :         : 3         :                
+TRG_PLS[4]                   : 52        : output : 3.3-V LVCMOS      :         : 3         : Y              
 GND                          : 53        : gnd    :                   :         :           :                
 TRG_PLS[3]                   : 54        : output : 3.3-V LVCMOS      :         : 3         : Y              
 TRG_PLS[2]                   : 55        : output : 3.3-V LVCMOS      :         : 3         : Y              

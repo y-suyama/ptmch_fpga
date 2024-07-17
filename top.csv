@@ -1,30 +1,31 @@
-# Copyright (C) 2019  Intel Corporation. All rights reserved.
-# Your use of Intel Corporation's design tools, logic functions 
-# and other software and tools, and any partner logic 
-# functions, and any output files from any of the foregoing 
-# (including device programming or simulation files), and any 
-# associated documentation or information are expressly subject 
-# to the terms and conditions of the Intel Program License 
-# Subscription Agreement, the Intel Quartus Prime License Agreement,
-# the Intel FPGA IP License Agreement, or other applicable license
-# agreement, including, without limitation, that your use is for
-# the sole purpose of programming logic devices manufactured by
-# Intel and sold by Intel or its authorized distributors.  Please
-# refer to the applicable agreement for further details, at
-# https://fpgasoftware.intel.com/eula.
-
-# Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
-# File: C:\Users\suyama84\Documents\fpga\max10_10m08_ptmch\top.csv
-# Generated on: Wed Jul 17 09:51:58 2024
-
-# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus Prime software.
-
+# Copyright (C) 2019  Intel Corporation. All rights reserved.,,,,,,,,,,,
+# Your use of Intel Corporation's design tools, logic functions ,,,,,,,,,,
+# and other software and tools, and any partner logic ,,,,,,,,,,
+# functions, and any output files from any of the foregoing ,,,,,,,,,,
+# (including device programming or simulation files), and any ,,,,,,,,,,
+# associated documentation or information are expressly subject ,,,,,,,,,,,
+# to the terms and conditions of the Intel Program License ,,,,,,,,,,,
+# Subscription Agreement, the Intel Quartus Prime License Agreement,,,,,,,,,,
+# the Intel FPGA IP License Agreement, or other applicable license,,,,,,,,,,
+# agreement, including, without limitation, that your use is for,,,,,,,,
+# the sole purpose of programming logic devices manufactured by,,,,,,,,,,,
+# Intel and sold by Intel or its authorized distributors.  Please,,,,,,,,,,,
+# refer to the applicable agreement for further details, at,,,,,,,,,,
+# https://fpgasoftware.intel.com/eula.,,,,,,,,,,,
+,,,,,,,,,,,
+# Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition,,,,,,,,,,,
+# File: C:\Users\suyama84\Documents\fpga\max10_10m08_ptmch\top.csv,,,,,,,,,,,
+# Generated on: Wed Jul 17 09:51:58 2024,,,,,,,,,,,
+,,,,,,,,,,,
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus Prime software.,,,,,,,,,,,
+,,,,,,,,,,,
 To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair,Strict Preservation
 CLK50M,Input,PIN_27,2,B2_N0,PIN_27,3.3-V LVCMOS,,,,,
 RESET_N,Input,PIN_121,8,B8_N0,PIN_121,3.3-V LVCMOS,,,,,
 SPI_CLK,Input,PIN_60,3,B3_N0,PIN_60,3.3-V LVCMOS,,,,,
 SPI_CS,Input,PIN_59,3,B3_N0,PIN_59,3.3-V LVCMOS,,,,,
 SPI_MOSI,Input,PIN_58,3,B3_N0,PIN_58,3.3-V LVCMOS,,,,,
+TRG_PLS[4],Output,PIN_52,3,B3_N0,PIN_52,3.3-V LVCMOS,,maximum current,,,
 TRG_PLS[3],Output,PIN_54,3,B3_N0,PIN_54,3.3-V LVCMOS,,maximum current,,,
 TRG_PLS[2],Output,PIN_55,3,B3_N0,PIN_55,3.3-V LVCMOS,,maximum current,,,
 TRG_PLS[1],Output,PIN_56,3,B3_N0,PIN_56,3.3-V LVCMOS,,maximum current,,,

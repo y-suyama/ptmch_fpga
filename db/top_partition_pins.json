@@ -20,6 +20,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "TRG_PLS[4]",
+					"strict" : false
+				},
+				{
 					"name" : "RESET_N",
 					"strict" : false
 				},

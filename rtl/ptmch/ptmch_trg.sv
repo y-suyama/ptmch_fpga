@@ -22,7 +22,7 @@ module ptmch_trg(
     input  logic          SPI_CS,
     input  logic          SPI_CLK,
     input  logic          SPI_MOSI,
-    output logic [ 3: 0]  TRG_PLS
+    output logic [ 4: 0]  TRG_PLS
 );
 //=================================================================
 //  PARAMETER declarations
@@ -32,6 +32,8 @@ module ptmch_trg(
     parameter p_readstatus2      = 8'h05;
     parameter p_128kb_blockerase = 8'hd8;
     parameter p_pagedata_read    = 8'hd13;
+    parameter p_writestatus1     = 8'h1f;
+    parameter p_writestatus2     = 8'h01;
 //=================================================================
 //=================================================================
 //  Internal Signal
@@ -57,9 +59,6 @@ module ptmch_trg(
 //=================================================================
 //  output Port
 //=================================================================
-    // pattern match check
-    assign   c_inst_mch  = (sr_inst_chk_3d == p_program_excute | sr_inst_chk_3d == p_readstatus1 | sr_inst_chk_3d == p_readstatus2 | sr_inst_chk_3d == p_128kb_blockerase | sr_inst_chk_3d == p_pagedata_read)? 1'b1:
-                                                                 1'b0;
     // TRG_PLS Output sel
     assign   TRG_PLS[0]  = (sr_inst_chk_3d == p_program_excute )? n_trg_pls:
                                                                    1'b0;
@@ -68,7 +67,9 @@ module ptmch_trg(
     assign   TRG_PLS[2]  = (sr_inst_chk_3d == p_128kb_blockerase )? n_trg_pls:
                                                                     1'b0;
     assign   TRG_PLS[3]  = (sr_inst_chk_3d == p_pagedata_read )? n_trg_pls:
-                                                                    1'b0;
+                                                                 1'b0;
+    assign   TRG_PLS[4]  = (sr_inst_chk_3d == p_writestatus1 | sr_inst_chk_3d == p_writestatus2)? n_trg_pls:
+                                                                 1'b0;
     assign   c_inst_edge = (c_inst_mch & ~sr_inst_mch_sft2);
     assign   c_cs_edge = (sr_cs_sync & ~sr_cs_sync_sft2);
 //=================================================================
@@ -187,6 +188,21 @@ module ptmch_trg(
         else
             sr_cs_sync_sft2  <= sr_cs_sync_sft1;
     end
+
+    // pattern match check
+    always @* begin
+        case (sr_inst_chk_3d)
+            p_program_excute   : c_inst_mch = 1'b1;
+            p_readstatus1      : c_inst_mch = 1'b1;
+            p_readstatus2      : c_inst_mch = 1'b1;
+            p_128kb_blockerase : c_inst_mch = 1'b1;
+            p_pagedata_read    : c_inst_mch = 1'b1;
+            p_writestatus1     : c_inst_mch = 1'b1;
+            p_writestatus2     : c_inst_mch = 1'b1;
+            default            : c_inst_mch = 1'b0;
+        endcase
+    end
+ 
     // TRG PLS time expander
     always @* begin
         case (sr_pls_cnt)

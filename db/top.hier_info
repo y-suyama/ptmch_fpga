@@ -8,6 +8,7 @@ TRG_PLS[0] <= ptmch_top:ptmch_inst.TRG_PLS
 TRG_PLS[1] <= ptmch_top:ptmch_inst.TRG_PLS
 TRG_PLS[2] <= ptmch_top:ptmch_inst.TRG_PLS
 TRG_PLS[3] <= ptmch_top:ptmch_inst.TRG_PLS
+TRG_PLS[4] <= ptmch_top:ptmch_inst.TRG_PLS
 
 
 |max10_10m08_top|nios2_system:u0
@@ -210,6 +211,7 @@ TRG_PLS[0] <= ptmch_trg:trg_inst.TRG_PLS
 TRG_PLS[1] <= ptmch_trg:trg_inst.TRG_PLS
 TRG_PLS[2] <= ptmch_trg:trg_inst.TRG_PLS
 TRG_PLS[3] <= ptmch_trg:trg_inst.TRG_PLS
+TRG_PLS[4] <= ptmch_trg:trg_inst.TRG_PLS
 
 
 |max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst
@@ -225,8 +227,8 @@ RESET_N => sr_pls_cnt[3].PRESET
 RESET_N => ar_spi_cs_1d.ACLR
 RESET_N => sr_spi_cs_2d.ACLR
 RESET_N => sr_cs_sync.ACLR
-RESET_N => sr_cs_sync_sft2.ACLR
 RESET_N => sr_cs_sync_sft1.ACLR
+RESET_N => sr_cs_sync_sft2.ACLR
 CLK160M => sr_cs_sync_sft2.CLK
 CLK160M => sr_cs_sync_sft1.CLK
 CLK160M => sr_cs_sync.CLK
@@ -288,5 +290,6 @@ TRG_PLS[0] <= TRG_PLS.DB_MAX_OUTPUT_PORT_TYPE
 TRG_PLS[1] <= TRG_PLS.DB_MAX_OUTPUT_PORT_TYPE
 TRG_PLS[2] <= TRG_PLS.DB_MAX_OUTPUT_PORT_TYPE
 TRG_PLS[3] <= TRG_PLS.DB_MAX_OUTPUT_PORT_TYPE
+TRG_PLS[4] <= TRG_PLS.DB_MAX_OUTPUT_PORT_TYPE
 
 
