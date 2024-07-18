@@ -31,7 +31,7 @@ module ptmch_trg(
     parameter p_readstatus1      = 8'h0f;
     parameter p_readstatus2      = 8'h05;
     parameter p_128kb_blockerase = 8'hd8;
-    parameter p_pagedata_read    = 8'hd13;
+    parameter p_pagedata_read    = 8'h13;
     parameter p_writestatus1     = 8'h1f;
     parameter p_writestatus2     = 8'h01;
 //=================================================================

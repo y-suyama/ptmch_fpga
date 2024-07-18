@@ -81,8 +81,8 @@ set_global_assignment -name SDC_FILE max10.sdc
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/ptmch/ptmch_top.sv
 set_location_assignment PIN_56 -to TRG_PLS[1]
 set_location_assignment PIN_55 -to TRG_PLS[2]
-set_location_assignment PIN_54 -to TRG_PLS[3]
-set_location_assignment PIN_52 -to TRG_PLS[4]
+set_location_assignment PIN_52 -to TRG_PLS[3]
+set_location_assignment PIN_50 -to TRG_PLS[4]
 set_location_assignment PIN_57 -to TRG_PLS[0]
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to TRG_PLS[4]
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to TRG_PLS[3]
