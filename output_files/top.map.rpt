@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top
-Wed Feb  5 10:21:43 2025
+Wed Feb  5 13:03:41 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -61,7 +61,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Feb  5 10:21:43 2025          ;
+; Analysis & Synthesis Status        ; Successful - Wed Feb  5 13:03:41 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; top                                            ;
 ; Top-level Entity Name              ; max10_10m08_top                                ;
@@ -587,23 +587,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Wed Feb  5 10:21:31 2025
+    Info: Processing started: Wed Feb  5 13:03:29 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12248): Elaborating Platform Designer system entity "nios2_system.qsys"
-Info (12250): 2025.02.05.10:21:38 Progress: Loading ptmch_fpga-main/nios2_system.qsys
-Info (12250): 2025.02.05.10:21:38 Progress: Reading input file
-Info (12250): 2025.02.05.10:21:38 Progress: Adding altpll_0 [altpll 18.1]
+Info (12250): 2025.02.05.13:03:36 Progress: Loading ptmch_fpga-main/nios2_system.qsys
+Info (12250): 2025.02.05.13:03:37 Progress: Reading input file
+Info (12250): 2025.02.05.13:03:37 Progress: Adding altpll_0 [altpll 18.1]
 Warning (12251): Altpll_0: Used altpll 23.1 (instead of 18.1)
-Info (12250): 2025.02.05.10:21:39 Progress: Parameterizing module altpll_0
-Info (12250): 2025.02.05.10:21:39 Progress: Adding clk_0 [clock_source 18.1]
+Info (12250): 2025.02.05.13:03:37 Progress: Parameterizing module altpll_0
+Info (12250): 2025.02.05.13:03:37 Progress: Adding clk_0 [clock_source 18.1]
 Warning (12251): Clk_0: Used clock_source 23.1 (instead of 18.1)
-Info (12250): 2025.02.05.10:21:39 Progress: Parameterizing module clk_0
-Info (12250): 2025.02.05.10:21:39 Progress: Building connections
-Info (12250): 2025.02.05.10:21:39 Progress: Parameterizing connections
-Info (12250): 2025.02.05.10:21:39 Progress: Validating
-Info (12250): 2025.02.05.10:21:39 Progress: Done reading input file
+Info (12250): 2025.02.05.13:03:37 Progress: Parameterizing module clk_0
+Info (12250): 2025.02.05.13:03:37 Progress: Building connections
+Info (12250): 2025.02.05.13:03:37 Progress: Parameterizing connections
+Info (12250): 2025.02.05.13:03:37 Progress: Validating
+Info (12250): 2025.02.05.13:03:37 Progress: Done reading input file
 Warning (12251): Nios2_system.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
 Warning (12251): Nios2_system.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
 Info (12250): Nios2_system: Generating nios2_system "nios2_system" for QUARTUS_SYNTH
@@ -679,8 +679,8 @@ Info (21057): Implemented 102 device resources after synthesis - the final resou
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
     Info: Peak virtual memory: 4937 megabytes
-    Info: Processing ended: Wed Feb  5 10:21:43 2025
+    Info: Processing ended: Wed Feb  5 13:03:41 2025
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Total CPU time (on all processors): 00:00:31
 
 
