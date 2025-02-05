@@ -34,7 +34,6 @@ module ptmch_trg(
     parameter p_writestatus1     = 8'h1f;
     parameter p_writestatus2     = 8'h01;
 //=================================================================
-//=================================================================
 //  Internal Signal
 //=================================================================
     logic [ 7: 0]  sr_inst_sht;
@@ -115,7 +114,7 @@ module ptmch_trg(
             sr_inst_chk_1d  <= ar_inst_chk;
     end
     // Instraction chk(2d)
-    always_ff @(posedge CLK160M or negedge RESET_N or posedge c_cs_edge) begin
+    always_ff @(posedge CLK160M or negedge RESET_N) begin
         if(!RESET_N)
            sr_inst_chk_2d  <= 8'h0;
         else if(c_cs_edge)
@@ -124,7 +123,7 @@ module ptmch_trg(
             sr_inst_chk_2d  <= sr_inst_chk_1d;
     end
     // Instraction chk(3d)
-    always_ff @(posedge CLK160M or negedge RESET_N or posedge c_cs_edge) begin
+    always_ff @(posedge CLK160M or negedge RESET_N) begin
         if(!RESET_N)
             sr_inst_chk_3d  <= 8'h0;
         else if(c_cs_edge)
