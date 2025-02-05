@@ -1,0 +1,321 @@
+|max10_10m08_top
+CLK50M => CLK50M.IN1
+RESET_N => RESET_N.IN2
+SPI_CS => SPI_CS.IN1
+SPI_CLK => SPI_CLK.IN1
+SPI_MOSI => SPI_MOSI.IN1
+TRG_PLS[0] <= ptmch_top:ptmch_inst.TRG_PLS
+TRG_PLS[1] <= ptmch_top:ptmch_inst.TRG_PLS
+TRG_PLS[2] <= ptmch_top:ptmch_inst.TRG_PLS
+TRG_PLS[3] <= ptmch_top:ptmch_inst.TRG_PLS
+TRG_PLS[4] <= ptmch_top:ptmch_inst.TRG_PLS
+
+
+|max10_10m08_top|nios2_system:u0
+altpll_0_c1_clk <= nios2_system_altpll_0:altpll_0.c1
+clock_clk => clock_clk.IN2
+reset_n_reset_n => _.IN1
+
+
+|max10_10m08_top|nios2_system:u0|nios2_system_altpll_0:altpll_0
+address[0] => w_select_control.IN0
+address[0] => w_select_status.IN0
+address[1] => w_select_status.IN1
+address[1] => w_select_control.IN1
+areset => comb.IN1
+c0 <= nios2_system_altpll_0_altpll_sc92:sd1.clk
+c1 <= nios2_system_altpll_0_altpll_sc92:sd1.clk
+c2 <= nios2_system_altpll_0_altpll_sc92:sd1.clk
+c3 <= nios2_system_altpll_0_altpll_sc92:sd1.clk
+c4 <= nios2_system_altpll_0_altpll_sc92:sd1.clk
+clk => clk.IN2
+configupdate => ~NO_FANOUT~
+locked <= wire_sd1_locked.DB_MAX_OUTPUT_PORT_TYPE
+phasecounterselect[0] => ~NO_FANOUT~
+phasecounterselect[1] => ~NO_FANOUT~
+phasecounterselect[2] => ~NO_FANOUT~
+phasedone <= <GND>
+phasestep => ~NO_FANOUT~
+phaseupdown => ~NO_FANOUT~
+read => readdata.IN1
+read => readdata.IN1
+readdata[0] <= readdata.DB_MAX_OUTPUT_PORT_TYPE
+readdata[1] <= readdata.DB_MAX_OUTPUT_PORT_TYPE
+readdata[2] <= <GND>
+readdata[3] <= <GND>
+readdata[4] <= <GND>
+readdata[5] <= <GND>
+readdata[6] <= <GND>
+readdata[7] <= <GND>
+readdata[8] <= <GND>
+readdata[9] <= <GND>
+readdata[10] <= <GND>
+readdata[11] <= <GND>
+readdata[12] <= <GND>
+readdata[13] <= <GND>
+readdata[14] <= <GND>
+readdata[15] <= <GND>
+readdata[16] <= <GND>
+readdata[17] <= <GND>
+readdata[18] <= <GND>
+readdata[19] <= <GND>
+readdata[20] <= <GND>
+readdata[21] <= <GND>
+readdata[22] <= <GND>
+readdata[23] <= <GND>
+readdata[24] <= <GND>
+readdata[25] <= <GND>
+readdata[26] <= <GND>
+readdata[27] <= <GND>
+readdata[28] <= <GND>
+readdata[29] <= <GND>
+readdata[30] <= <GND>
+readdata[31] <= <GND>
+reset => prev_reset.ACLR
+reset => pfdena_reg.PRESET
+reset => _.IN1
+scanclk => ~NO_FANOUT~
+scanclkena => ~NO_FANOUT~
+scandata => ~NO_FANOUT~
+scandataout <= <GND>
+scandone <= <GND>
+write => wire_pfdena_reg_ena.IN1
+writedata[0] => w_reset.IN1
+writedata[1] => pfdena_reg.DATAIN
+writedata[2] => ~NO_FANOUT~
+writedata[3] => ~NO_FANOUT~
+writedata[4] => ~NO_FANOUT~
+writedata[5] => ~NO_FANOUT~
+writedata[6] => ~NO_FANOUT~
+writedata[7] => ~NO_FANOUT~
+writedata[8] => ~NO_FANOUT~
+writedata[9] => ~NO_FANOUT~
+writedata[10] => ~NO_FANOUT~
+writedata[11] => ~NO_FANOUT~
+writedata[12] => ~NO_FANOUT~
+writedata[13] => ~NO_FANOUT~
+writedata[14] => ~NO_FANOUT~
+writedata[15] => ~NO_FANOUT~
+writedata[16] => ~NO_FANOUT~
+writedata[17] => ~NO_FANOUT~
+writedata[18] => ~NO_FANOUT~
+writedata[19] => ~NO_FANOUT~
+writedata[20] => ~NO_FANOUT~
+writedata[21] => ~NO_FANOUT~
+writedata[22] => ~NO_FANOUT~
+writedata[23] => ~NO_FANOUT~
+writedata[24] => ~NO_FANOUT~
+writedata[25] => ~NO_FANOUT~
+writedata[26] => ~NO_FANOUT~
+writedata[27] => ~NO_FANOUT~
+writedata[28] => ~NO_FANOUT~
+writedata[29] => ~NO_FANOUT~
+writedata[30] => ~NO_FANOUT~
+writedata[31] => ~NO_FANOUT~
+
+
+|max10_10m08_top|nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_stdsync_sv6:stdsync2
+clk => clk.IN1
+din => din.IN1
+dout <= nios2_system_altpll_0_dffpipe_l2c:dffpipe3.q
+reset_n => reset_n.IN1
+
+
+|max10_10m08_top|nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_stdsync_sv6:stdsync2|nios2_system_altpll_0_dffpipe_l2c:dffpipe3
+clock => dffe6a[0].CLK
+clock => dffe5a[0].CLK
+clock => dffe4a[0].CLK
+clrn => dffe6a[0].ACLR
+clrn => dffe4a[0].ACLR
+clrn => dffe5a[0].ACLR
+d[0] => dffe4a[0].DATAIN
+q[0] <= dffe6a[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|max10_10m08_top|nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_altpll_sc92:sd1
+areset => pll_lock_sync.ACLR
+areset => pll7.ARESET
+clk[0] <= pll7.CLK
+clk[1] <= pll7.CLK1
+clk[2] <= pll7.CLK2
+clk[3] <= pll7.CLK3
+clk[4] <= pll7.CLK4
+inclk[0] => pll7.CLK
+inclk[1] => pll7.CLK1
+locked <= locked.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|max10_10m08_top|nios2_system:u0|altera_reset_controller:rst_controller
+reset_in0 => merged_reset.IN0
+reset_in1 => merged_reset.IN1
+reset_in2 => merged_reset.IN1
+reset_in3 => merged_reset.IN1
+reset_in4 => merged_reset.IN1
+reset_in5 => merged_reset.IN1
+reset_in6 => merged_reset.IN1
+reset_in7 => merged_reset.IN1
+reset_in8 => merged_reset.IN1
+reset_in9 => merged_reset.IN1
+reset_in10 => merged_reset.IN1
+reset_in11 => merged_reset.IN1
+reset_in12 => merged_reset.IN1
+reset_in13 => merged_reset.IN1
+reset_in14 => merged_reset.IN1
+reset_in15 => merged_reset.IN1
+reset_req_in0 => ~NO_FANOUT~
+reset_req_in1 => ~NO_FANOUT~
+reset_req_in2 => ~NO_FANOUT~
+reset_req_in3 => ~NO_FANOUT~
+reset_req_in4 => ~NO_FANOUT~
+reset_req_in5 => ~NO_FANOUT~
+reset_req_in6 => ~NO_FANOUT~
+reset_req_in7 => ~NO_FANOUT~
+reset_req_in8 => ~NO_FANOUT~
+reset_req_in9 => ~NO_FANOUT~
+reset_req_in10 => ~NO_FANOUT~
+reset_req_in11 => ~NO_FANOUT~
+reset_req_in12 => ~NO_FANOUT~
+reset_req_in13 => ~NO_FANOUT~
+reset_req_in14 => ~NO_FANOUT~
+reset_req_in15 => ~NO_FANOUT~
+clk => clk.IN2
+reset_out <= altera_reset_synchronizer:alt_rst_sync_uq1.reset_out
+reset_req <= altera_reset_synchronizer:alt_rst_req_sync_uq1.reset_out
+
+
+|max10_10m08_top|nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+reset_in => altera_reset_synchronizer_int_chain_out.PRESET
+reset_in => altera_reset_synchronizer_int_chain[0].PRESET
+reset_in => altera_reset_synchronizer_int_chain[1].PRESET
+clk => altera_reset_synchronizer_int_chain_out.CLK
+clk => altera_reset_synchronizer_int_chain[0].CLK
+clk => altera_reset_synchronizer_int_chain[1].CLK
+reset_out <= altera_reset_synchronizer_int_chain_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|max10_10m08_top|nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
+reset_in => altera_reset_synchronizer_int_chain[1].DATAIN
+clk => altera_reset_synchronizer_int_chain_out.CLK
+clk => altera_reset_synchronizer_int_chain[0].CLK
+clk => altera_reset_synchronizer_int_chain[1].CLK
+reset_out <= altera_reset_synchronizer_int_chain_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|max10_10m08_top|ptmch_top:ptmch_inst
+RESET_N => RESET_N.IN1
+CLK160M => CLK160M.IN1
+SPI_CS => SPI_CS.IN1
+SPI_CLK => SPI_CLK.IN1
+SPI_MOSI => SPI_MOSI.IN1
+TRG_PLS[0] <= ptmch_trg:trg_inst.TRG_PLS
+TRG_PLS[1] <= ptmch_trg:trg_inst.TRG_PLS
+TRG_PLS[2] <= ptmch_trg:trg_inst.TRG_PLS
+TRG_PLS[3] <= ptmch_trg:trg_inst.TRG_PLS
+TRG_PLS[4] <= ptmch_trg:trg_inst.TRG_PLS
+
+
+|max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst
+RESET_N => sr_inst_sht[0].ACLR
+RESET_N => sr_inst_sht[1].ACLR
+RESET_N => sr_inst_sht[2].ACLR
+RESET_N => sr_inst_sht[3].ACLR
+RESET_N => sr_inst_sht[4].ACLR
+RESET_N => sr_inst_sht[5].ACLR
+RESET_N => sr_inst_sht[6].ACLR
+RESET_N => sr_inst_sht[7].ACLR
+RESET_N => sr_inst_cnt[0].PRESET
+RESET_N => sr_inst_cnt[1].ACLR
+RESET_N => sr_inst_cnt[2].ACLR
+RESET_N => sr_inst_cnt[3].PRESET
+RESET_N => ar_inst_chk[0].ACLR
+RESET_N => ar_inst_chk[1].ACLR
+RESET_N => ar_inst_chk[2].ACLR
+RESET_N => ar_inst_chk[3].ACLR
+RESET_N => ar_inst_chk[4].ACLR
+RESET_N => ar_inst_chk[5].ACLR
+RESET_N => ar_inst_chk[6].ACLR
+RESET_N => ar_inst_chk[7].ACLR
+RESET_N => sr_inst_chk_1d[0].ACLR
+RESET_N => sr_inst_chk_1d[1].ACLR
+RESET_N => sr_inst_chk_1d[2].ACLR
+RESET_N => sr_inst_chk_1d[3].ACLR
+RESET_N => sr_inst_chk_1d[4].ACLR
+RESET_N => sr_inst_chk_1d[5].ACLR
+RESET_N => sr_inst_chk_1d[6].ACLR
+RESET_N => sr_inst_chk_1d[7].ACLR
+RESET_N => sr_inst_chk_2d[7].IN1
+RESET_N => ar_inst_mch_sft1.ACLR
+RESET_N => sr_inst_mch_sft2.ACLR
+RESET_N => sr_pls_cnt[0].PRESET
+RESET_N => sr_pls_cnt[1].PRESET
+RESET_N => sr_pls_cnt[2].PRESET
+RESET_N => sr_pls_cnt[3].PRESET
+RESET_N => ar_spi_cs_1d.ACLR
+RESET_N => sr_spi_cs_2d.ACLR
+RESET_N => sr_cs_sync.ACLR
+RESET_N => sr_cs_sync_sft1.ACLR
+RESET_N => sr_cs_sync_sft2.ACLR
+CLK160M => sr_cs_sync_sft2.CLK
+CLK160M => sr_cs_sync_sft1.CLK
+CLK160M => sr_cs_sync.CLK
+CLK160M => sr_spi_cs_2d.CLK
+CLK160M => ar_spi_cs_1d.CLK
+CLK160M => sr_pls_cnt[0].CLK
+CLK160M => sr_pls_cnt[1].CLK
+CLK160M => sr_pls_cnt[2].CLK
+CLK160M => sr_pls_cnt[3].CLK
+CLK160M => sr_inst_mch_sft2.CLK
+CLK160M => ar_inst_mch_sft1.CLK
+CLK160M => sr_inst_chk_3d[0].CLK
+CLK160M => sr_inst_chk_3d[1].CLK
+CLK160M => sr_inst_chk_3d[2].CLK
+CLK160M => sr_inst_chk_3d[3].CLK
+CLK160M => sr_inst_chk_3d[4].CLK
+CLK160M => sr_inst_chk_3d[5].CLK
+CLK160M => sr_inst_chk_3d[6].CLK
+CLK160M => sr_inst_chk_3d[7].CLK
+CLK160M => sr_inst_chk_2d[0].CLK
+CLK160M => sr_inst_chk_2d[1].CLK
+CLK160M => sr_inst_chk_2d[2].CLK
+CLK160M => sr_inst_chk_2d[3].CLK
+CLK160M => sr_inst_chk_2d[4].CLK
+CLK160M => sr_inst_chk_2d[5].CLK
+CLK160M => sr_inst_chk_2d[6].CLK
+CLK160M => sr_inst_chk_2d[7].CLK
+CLK160M => sr_inst_chk_1d[0].CLK
+CLK160M => sr_inst_chk_1d[1].CLK
+CLK160M => sr_inst_chk_1d[2].CLK
+CLK160M => sr_inst_chk_1d[3].CLK
+CLK160M => sr_inst_chk_1d[4].CLK
+CLK160M => sr_inst_chk_1d[5].CLK
+CLK160M => sr_inst_chk_1d[6].CLK
+CLK160M => sr_inst_chk_1d[7].CLK
+CLK160M => ar_inst_chk[0].CLK
+CLK160M => ar_inst_chk[1].CLK
+CLK160M => ar_inst_chk[2].CLK
+CLK160M => ar_inst_chk[3].CLK
+CLK160M => ar_inst_chk[4].CLK
+CLK160M => ar_inst_chk[5].CLK
+CLK160M => ar_inst_chk[6].CLK
+CLK160M => ar_inst_chk[7].CLK
+SPI_CS => ar_spi_cs_1d.DATAIN
+SPI_CLK => sr_inst_cnt[0].CLK
+SPI_CLK => sr_inst_cnt[1].CLK
+SPI_CLK => sr_inst_cnt[2].CLK
+SPI_CLK => sr_inst_cnt[3].CLK
+SPI_CLK => sr_inst_sht[0].CLK
+SPI_CLK => sr_inst_sht[1].CLK
+SPI_CLK => sr_inst_sht[2].CLK
+SPI_CLK => sr_inst_sht[3].CLK
+SPI_CLK => sr_inst_sht[4].CLK
+SPI_CLK => sr_inst_sht[5].CLK
+SPI_CLK => sr_inst_sht[6].CLK
+SPI_CLK => sr_inst_sht[7].CLK
+SPI_MOSI => sr_inst_sht.DATAA
+TRG_PLS[0] <= TRG_PLS.DB_MAX_OUTPUT_PORT_TYPE
+TRG_PLS[1] <= TRG_PLS.DB_MAX_OUTPUT_PORT_TYPE
+TRG_PLS[2] <= TRG_PLS.DB_MAX_OUTPUT_PORT_TYPE
+TRG_PLS[3] <= TRG_PLS.DB_MAX_OUTPUT_PORT_TYPE
+TRG_PLS[4] <= TRG_PLS.DB_MAX_OUTPUT_PORT_TYPE
+
+
