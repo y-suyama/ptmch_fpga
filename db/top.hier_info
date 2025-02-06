@@ -215,18 +215,7 @@ TRG_PLS[4] <= ptmch_trg:trg_inst.TRG_PLS
 
 
 |max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst
-RESET_N => sr_inst_sht[0].ACLR
-RESET_N => sr_inst_sht[1].ACLR
-RESET_N => sr_inst_sht[2].ACLR
-RESET_N => sr_inst_sht[3].ACLR
-RESET_N => sr_inst_sht[4].ACLR
-RESET_N => sr_inst_sht[5].ACLR
-RESET_N => sr_inst_sht[6].ACLR
-RESET_N => sr_inst_sht[7].ACLR
-RESET_N => sr_inst_cnt[0].PRESET
-RESET_N => sr_inst_cnt[1].ACLR
-RESET_N => sr_inst_cnt[2].ACLR
-RESET_N => sr_inst_cnt[3].PRESET
+RESET_N => c_spi_reset_n.IN1
 RESET_N => ar_inst_chk[0].ACLR
 RESET_N => ar_inst_chk[1].ACLR
 RESET_N => ar_inst_chk[2].ACLR
@@ -326,7 +315,7 @@ SPI_CLK => sr_inst_sht[4].CLK
 SPI_CLK => sr_inst_sht[5].CLK
 SPI_CLK => sr_inst_sht[6].CLK
 SPI_CLK => sr_inst_sht[7].CLK
-SPI_MOSI => sr_inst_sht.DATAA
+SPI_MOSI => sr_inst_sht[0].DATAIN
 TRG_PLS[0] <= TRG_PLS.DB_MAX_OUTPUT_PORT_TYPE
 TRG_PLS[1] <= TRG_PLS.DB_MAX_OUTPUT_PORT_TYPE
 TRG_PLS[2] <= TRG_PLS.DB_MAX_OUTPUT_PORT_TYPE

@@ -54,6 +54,7 @@ module ptmch_trg(
     logic          sr_cs_sync_sft2;
     logic          c_cs_edge;
     logic          n_trg_pls;
+    logic          c_spi_reset_n;
 //=================================================================
 //  output Port
 //=================================================================
@@ -69,25 +70,22 @@ module ptmch_trg(
     assign   TRG_PLS[4]  = (sr_inst_chk_3d == p_writestatus1 | sr_inst_chk_3d == p_writestatus2)? n_trg_pls:
                                                                  1'b0;
     assign   c_inst_edge = (c_inst_mch & ~sr_inst_mch_sft2);
-    assign   c_cs_edge = (sr_cs_sync & ~sr_cs_sync_sft2);
+    assign   c_cs_edge = (~sr_cs_sync & sr_cs_sync_sft2);
+    assign   c_spi_reset_n = (~c_cs_edge & RESET_N);
 //=================================================================
 //  Structural coding
 //=================================================================
     // CS Shift Register
-    always_ff @(posedge SPI_CLK or negedge RESET_N) begin
-        if(!RESET_N)
-            sr_inst_sht  <= 8'h0;
-        else if(c_cs_edge == 1'b1)  // CLR
+    always_ff @(posedge SPI_CLK or negedge c_spi_reset_n) begin
+        if(!c_spi_reset_n)
             sr_inst_sht  <= 8'h0;
         else
             sr_inst_sht[7:0]  <= {sr_inst_sht[6:0],SPI_MOSI};
     end
     //  Instraction COUNTER
-    always_ff @(posedge SPI_CLK or negedge RESET_N) begin
-        if(!RESET_N)
+    always_ff @(posedge SPI_CLK or negedge c_spi_reset_n) begin
+        if(!c_spi_reset_n)
             sr_inst_cnt  <= 4'b1001;
-        else if(c_cs_edge == 1'b1)  // CLR
-                sr_inst_cnt  <= 4'b0;
         else
             if(sr_inst_cnt == 4'b1001 )// STOP
                 sr_inst_cnt  <= sr_inst_cnt;
