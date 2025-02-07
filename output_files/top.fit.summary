@@ -1,11 +1,11 @@
-Fitter Status : Successful - Thu Feb  6 18:17:33 2025
+Fitter Status : Successful - Fri Feb  7 20:02:44 2025
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : top
 Top-level Entity Name : max10_10m08_top
 Family : MAX 10
 Device : 10M08SAE144C8G
 Timing Models : Final
-Total logic elements : 89 / 8,064 ( 1 % )
+Total logic elements : 91 / 8,064 ( 1 % )
     Total combinational functions : 71 / 8,064 ( < 1 % )
     Dedicated logic registers : 65 / 8,064 ( < 1 % )
 Total registers : 65

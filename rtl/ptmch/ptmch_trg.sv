@@ -85,7 +85,7 @@ module ptmch_trg(
     //  Instraction COUNTER
     always_ff @(posedge SPI_CLK or negedge c_spi_reset_n) begin
         if(!c_spi_reset_n)
-            sr_inst_cnt  <= 4'b1001;
+            sr_inst_cnt  <= 4'b0000;
         else
             if(sr_inst_cnt == 4'b1001 )// STOP
                 sr_inst_cnt  <= sr_inst_cnt;

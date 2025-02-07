@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top
-Thu Feb  6 18:17:26 2025
+Fri Feb  7 20:02:35 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -17,24 +17,23 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   9. Registers Removed During Synthesis
  10. Removed Registers Triggering Further Register Optimizations
  11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Physical Synthesis Netlist Optimizations
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for nios2_system:u0|nios2_system_altpll_0:altpll_0
- 16. Source assignments for nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_stdsync_sv6:stdsync2|nios2_system_altpll_0_dffpipe_l2c:dffpipe3
- 17. Source assignments for nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
- 18. Source assignments for nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
- 19. Parameter Settings for User Entity Instance: nios2_system:u0|altera_reset_controller:rst_controller
- 20. Parameter Settings for User Entity Instance: nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
- 21. Parameter Settings for User Entity Instance: nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
- 22. Parameter Settings for User Entity Instance: ptmch_top:ptmch_inst|ptmch_trg:trg_inst
- 23. Port Connectivity Checks: "nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
- 24. Port Connectivity Checks: "nios2_system:u0|altera_reset_controller:rst_controller"
- 25. Port Connectivity Checks: "nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_altpll_sc92:sd1"
- 26. Port Connectivity Checks: "nios2_system:u0|nios2_system_altpll_0:altpll_0"
- 27. Post-Synthesis Netlist Statistics for Top Partition
- 28. Elapsed Time Per Partition
- 29. Analysis & Synthesis Messages
+ 12. Physical Synthesis Netlist Optimizations
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for nios2_system:u0|nios2_system_altpll_0:altpll_0
+ 15. Source assignments for nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_stdsync_sv6:stdsync2|nios2_system_altpll_0_dffpipe_l2c:dffpipe3
+ 16. Source assignments for nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+ 17. Source assignments for nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
+ 18. Parameter Settings for User Entity Instance: nios2_system:u0|altera_reset_controller:rst_controller
+ 19. Parameter Settings for User Entity Instance: nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+ 20. Parameter Settings for User Entity Instance: nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
+ 21. Parameter Settings for User Entity Instance: ptmch_top:ptmch_inst|ptmch_trg:trg_inst
+ 22. Port Connectivity Checks: "nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
+ 23. Port Connectivity Checks: "nios2_system:u0|altera_reset_controller:rst_controller"
+ 24. Port Connectivity Checks: "nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_altpll_sc92:sd1"
+ 25. Port Connectivity Checks: "nios2_system:u0|nios2_system_altpll_0:altpll_0"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
 
 
 
@@ -61,7 +60,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Feb  6 18:17:26 2025          ;
+; Analysis & Synthesis Status        ; Successful - Fri Feb  7 20:02:35 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; top                                            ;
 ; Top-level Entity Name              ; max10_10m08_top                                ;
@@ -179,7 +178,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -297,17 +297,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------+
-; Inverted Register Statistics                                     ;
-+--------------------------------------------------------+---------+
-; Inverted Register                                      ; Fan out ;
-+--------------------------------------------------------+---------+
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_cnt[0] ; 5       ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_cnt[3] ; 4       ;
-; Total number of inverted registers = 2                 ;         ;
-+--------------------------------------------------------+---------+
-
-
 +----------------------------------------------------------------------------------------------------------------+
 ; Physical Synthesis Netlist Optimizations                                                                       ;
 +-----------------------------------------------------------------------+------------------+---------------------+
@@ -350,14 +339,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|ar_inst_mch_sft1_OTERM58      ; Retimed Register ; Timing optimization ;
 ; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|ar_inst_mch_sft1_OTERM60      ; Retimed Register ; Timing optimization ;
 ; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|ar_inst_mch_sft1_OTERM62      ; Retimed Register ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[0]_OTERM7      ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[0]_OTERM11     ; Retimed Register ; Timing optimization ;
 ; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[1]_OTERM9      ; Retimed Register ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[2]_OTERM11     ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[2]_OTERM7      ; Retimed Register ; Timing optimization ;
 ; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[3]_OTERM21     ; Retimed Register ; Timing optimization ;
 ; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[4]_OTERM13     ; Retimed Register ; Timing optimization ;
 ; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[5]_OTERM19     ; Retimed Register ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[6]_OTERM15     ; Retimed Register ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[7]_OTERM17     ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[6]_OTERM17     ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[7]_OTERM15     ; Retimed Register ; Timing optimization ;
 ; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d~9              ; Modified         ; Timing optimization ;
 ; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d~9_RTM045       ; Modified         ; Timing optimization ;
 ; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d~9_RTM049       ; Modified         ; Timing optimization ;
@@ -387,7 +376,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[0] ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[0]     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
 
@@ -615,7 +604,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -625,23 +614,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Thu Feb  6 18:17:13 2025
+    Info: Processing started: Fri Feb  7 20:02:12 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12248): Elaborating Platform Designer system entity "nios2_system.qsys"
-Info (12250): 2025.02.06.18:17:20 Progress: Loading ptmch_fpga-main/nios2_system.qsys
-Info (12250): 2025.02.06.18:17:20 Progress: Reading input file
-Info (12250): 2025.02.06.18:17:20 Progress: Adding altpll_0 [altpll 18.1]
+Info (12250): 2025.02.07.20:02:25 Progress: Loading ptmch_fpga-main/nios2_system.qsys
+Info (12250): 2025.02.07.20:02:26 Progress: Reading input file
+Info (12250): 2025.02.07.20:02:26 Progress: Adding altpll_0 [altpll 18.1]
 Warning (12251): Altpll_0: Used altpll 23.1 (instead of 18.1)
-Info (12250): 2025.02.06.18:17:21 Progress: Parameterizing module altpll_0
-Info (12250): 2025.02.06.18:17:21 Progress: Adding clk_0 [clock_source 18.1]
+Info (12250): 2025.02.07.20:02:26 Progress: Parameterizing module altpll_0
+Info (12250): 2025.02.07.20:02:26 Progress: Adding clk_0 [clock_source 18.1]
 Warning (12251): Clk_0: Used clock_source 23.1 (instead of 18.1)
-Info (12250): 2025.02.06.18:17:21 Progress: Parameterizing module clk_0
-Info (12250): 2025.02.06.18:17:21 Progress: Building connections
-Info (12250): 2025.02.06.18:17:21 Progress: Parameterizing connections
-Info (12250): 2025.02.06.18:17:21 Progress: Validating
-Info (12250): 2025.02.06.18:17:21 Progress: Done reading input file
+Info (12250): 2025.02.07.20:02:27 Progress: Parameterizing module clk_0
+Info (12250): 2025.02.07.20:02:27 Progress: Building connections
+Info (12250): 2025.02.07.20:02:27 Progress: Parameterizing connections
+Info (12250): 2025.02.07.20:02:27 Progress: Validating
+Info (12250): 2025.02.07.20:02:27 Progress: Done reading input file
 Warning (12251): Nios2_system.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
 Warning (12251): Nios2_system.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
 Info (12250): Nios2_system: Generating nios2_system "nios2_system" for QUARTUS_SYNTH
@@ -707,7 +696,7 @@ Info (128002): Starting physical synthesis algorithm register retiming
 Info (128003): Physical synthesis algorithm register retiming complete: estimated slack improvement of 1556 ps
 Info (128002): Starting physical synthesis algorithm combinational resynthesis using boolean division
 Info (128003): Physical synthesis algorithm combinational resynthesis using boolean division complete: estimated slack improvement of 0 ps
-Info (128001): Physical synthesis optimizations for speed complete: elapsed time is 00:00:00
+Info (128001): Physical synthesis optimizations for speed complete: elapsed time is 00:00:01
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 122 device resources after synthesis - the final resource count might be different
@@ -717,8 +706,8 @@ Info (21057): Implemented 122 device resources after synthesis - the final resou
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
     Info: Peak virtual memory: 4937 megabytes
-    Info: Processing ended: Thu Feb  6 18:17:26 2025
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:30
+    Info: Processing ended: Fri Feb  7 20:02:35 2025
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:41
 
 
