@@ -26,26 +26,42 @@ module ptmch_trg(
 //=================================================================
 //  PARAMETER declarations
 //=================================================================
-    parameter p_program_excute   = 8'h10;
-    parameter p_readstatus1      = 8'h0f;
-    parameter p_readstatus2      = 8'h05;
-    parameter p_128kb_blockerase = 8'hd8;
-    parameter p_pagedata_read    = 8'h13;
-    parameter p_writestatus1     = 8'h1f;
-    parameter p_writestatus2     = 8'h01;
+//    parameter p_program_excute   = 8'h10;
+//    parameter p_readstatus1      = 8'h0f;
+//    parameter p_readstatus2      = 8'h05;
+//    parameter p_128kb_blockerase = 8'hd8;
+//    parameter p_pagedata_read    = 8'h13;
+//    parameter p_writestatus1     = 8'h1f;
+//    parameter p_writestatus2     = 8'h01;
+// 250212 Extender
+    parameter p_program_excute   = 12'h100;
+    parameter p_readstatus1      = 12'h0f0;
+    parameter p_readstatus2      = 12'h050;
+    parameter p_128kb_blockerase = 12'hd80;
+    parameter p_pagedata_read    = 12'h130;
+    parameter p_writestatus1     = 12'h1fb;
+    parameter p_writestatus2     = 12'h01b;
+
 //=================================================================
 //  Internal Signal
 //=================================================================
-    logic [ 7: 0]  sr_inst_sht;
+// 250212 Extender
+//    logic [ 7: 0]  sr_inst_sht;
+    logic [11: 0]  sr_inst_sht;
     logic [ 3: 0]  sr_inst_cnt;
     logic [ 3: 0]  ar_inst_cnt_1d;
     logic [ 3: 0]  sr_inst_cnt_2d;
     logic [ 3: 0]  sr_inst_cnt_3d;
     logic [ 3: 0]  sr_inst_cnt_4d;
-    logic [ 7: 0]  ar_inst_chk;
-    logic [ 7: 0]  sr_inst_chk_1d;
-    logic [ 7: 0]  sr_inst_chk_2d;
-    logic [ 7: 0]  sr_inst_chk_3d;
+// 250212 Extender
+//    logic [ 7: 0]  ar_inst_chk;
+//    logic [ 7: 0]  sr_inst_chk_1d;
+//    logic [ 7: 0]  sr_inst_chk_2d;
+//    logic [ 7: 0]  sr_inst_chk_3d;
+    logic [11: 0]  ar_inst_chk;
+    logic [11: 0]  sr_inst_chk_1d;
+    logic [11: 0]  sr_inst_chk_2d;
+    logic [11: 0]  sr_inst_chk_3d;
     logic          c_inst_mch;
     logic          ar_inst_mch_sft1;
     logic          sr_inst_mch_sft2;
@@ -82,23 +98,25 @@ module ptmch_trg(
     // CS Shift Register
     always_ff @(posedge SPI_CLK or negedge c_spi_reset_n) begin
         if(!c_spi_reset_n)
-            sr_inst_sht  <= 8'h0;
-        else if(sr_inst_cnt == 4'b1000)
-            sr_inst_sht  <= sr_inst_sht;
+//            sr_inst_sht  <= 8'h0;
+            sr_inst_sht  <= 12'h0;
+        else if(sr_inst_cnt == 4'b1100)
+            sr_inst_sht <= sr_inst_sht;
         else
-            sr_inst_sht[7:0]  <= {sr_inst_sht[6:0],SPI_MOSI};
+//            sr_inst_sht[7:0]  <= {sr_inst_sht[6:0],SPI_MOSI};
+            sr_inst_sht[11:0]  <= {sr_inst_sht[10:0],SPI_MOSI};
     end
     //  Instraction COUNTER
     always_ff @(posedge SPI_CLK or negedge c_spi_reset_n) begin
         if(!c_spi_reset_n)
             sr_inst_cnt  <= 4'b0000;
         else
-            if(sr_inst_cnt == 4'b1000 )// STOP
+//            if(sr_inst_cnt == 4'b1001 )// STOP
+            if(sr_inst_cnt == 4'b1100 )// STOP
                 sr_inst_cnt  <= sr_inst_cnt;
             else  // Count
                 sr_inst_cnt <= sr_inst_cnt + 1'b1;
       end
-
     //  Instraction COUNTER 1Delay
     always_ff @(posedge CLK160M or negedge c_spi_reset_n) begin
         if(!c_spi_reset_n)
@@ -136,9 +154,11 @@ module ptmch_trg(
     // Instraction chk(async)
     always_ff @(posedge CLK160M or negedge RESET_N) begin
         if(!RESET_N)
-            ar_inst_chk  <= 8'h0;
+//            ar_inst_chk  <= 8'h0;
+            ar_inst_chk  <= 12'h0;
         else
-            if(sr_inst_cnt_4d == 4'b1000 ) // Load          
+//            if(sr_inst_cnt == 4'b1000 ) // Load          
+            if(sr_inst_cnt_4d == 4'b1100 ) // Load          
                 ar_inst_chk  <= sr_inst_sht;
             else
                 ar_inst_chk  <= ar_inst_chk;
@@ -146,21 +166,24 @@ module ptmch_trg(
     // Instraction chk(1d)
     always_ff @(posedge CLK160M or negedge c_spi_reset_n) begin
         if(!c_spi_reset_n)
-            sr_inst_chk_1d  <= 8'h0;
+//            sr_inst_chk_1d  <= 8'h0;
+            sr_inst_chk_1d  <= 12'h0;
         else
             sr_inst_chk_1d  <= ar_inst_chk;
     end
     // Instraction chk(2d)
     always_ff @(posedge CLK160M or negedge c_spi_reset_n) begin
         if(!c_spi_reset_n)
-           sr_inst_chk_2d  <= 8'h0;
+//           sr_inst_chk_2d  <= 8'h0;
+           sr_inst_chk_2d  <= 12'h0;
         else
             sr_inst_chk_2d  <= sr_inst_chk_1d;
     end
     // Instraction chk(3d)
     always_ff @(posedge CLK160M or negedge c_spi_reset_n) begin
         if(!c_spi_reset_n)
-            sr_inst_chk_3d  <= 8'h0;
+//            sr_inst_chk_3d  <= 8'h0;
+            sr_inst_chk_3d  <= 12'h0;
         else if(sr_inst_chk_1d == sr_inst_chk_2d)
             sr_inst_chk_3d  <= sr_inst_chk_2d;
         else
