@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top
-Wed Feb 12 16:05:25 2025
+Wed Feb 12 16:08:26 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -60,15 +60,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Feb 12 16:05:25 2025          ;
+; Analysis & Synthesis Status        ; Successful - Wed Feb 12 16:08:26 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; top                                            ;
 ; Top-level Entity Name              ; max10_10m08_top                                ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 85                                             ;
-;     Total combinational functions  ; 37                                             ;
-;     Dedicated logic registers      ; 61                                             ;
-; Total registers                    ; 61                                             ;
+; Total logic elements               ; 111                                            ;
+;     Total combinational functions  ; 57                                             ;
+;     Dedicated logic registers      ; 83                                             ;
+; Total registers                    ; 83                                             ;
 ; Total pins                         ; 10                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -202,20 +202,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                 ;
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 85                                                                                                    ;
+; Estimated Total logic elements              ; 111                                                                                                   ;
 ;                                             ;                                                                                                       ;
-; Total combinational functions               ; 37                                                                                                    ;
+; Total combinational functions               ; 57                                                                                                    ;
 ; Logic element usage by number of LUT inputs ;                                                                                                       ;
-;     -- 4 input functions                    ; 27                                                                                                    ;
-;     -- 3 input functions                    ; 5                                                                                                     ;
+;     -- 4 input functions                    ; 32                                                                                                    ;
+;     -- 3 input functions                    ; 20                                                                                                    ;
 ;     -- <=2 input functions                  ; 5                                                                                                     ;
 ;                                             ;                                                                                                       ;
 ; Logic elements by mode                      ;                                                                                                       ;
-;     -- normal mode                          ; 37                                                                                                    ;
+;     -- normal mode                          ; 57                                                                                                    ;
 ;     -- arithmetic mode                      ; 0                                                                                                     ;
 ;                                             ;                                                                                                       ;
-; Total registers                             ; 61                                                                                                    ;
-;     -- Dedicated logic registers            ; 61                                                                                                    ;
+; Total registers                             ; 83                                                                                                    ;
+;     -- Dedicated logic registers            ; 83                                                                                                    ;
 ;     -- I/O registers                        ; 0                                                                                                     ;
 ;                                             ;                                                                                                       ;
 ; I/O pins                                    ; 10                                                                                                    ;
@@ -226,9 +226,9 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 1                                                                                                     ;
 ;                                             ;                                                                                                       ;
 ; Maximum fan-out node                        ; nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_altpll_sc92:sd1|wire_pll7_clk[0] ;
-; Maximum fan-out                             ; 50                                                                                                    ;
-; Total fan-out                               ; 348                                                                                                   ;
-; Average fan-out                             ; 2.92                                                                                                  ;
+; Maximum fan-out                             ; 68                                                                                                    ;
+; Total fan-out                               ; 472                                                                                                   ;
+; Average fan-out                             ; 2.93                                                                                                  ;
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------+
 
 
@@ -237,12 +237,12 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                   ; Entity Name                       ; Library Name ;
 +--------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |max10_10m08_top                                 ; 37 (0)              ; 61 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 10   ; 0            ; 0          ; |max10_10m08_top                                                                                      ; max10_10m08_top                   ; work         ;
+; |max10_10m08_top                                 ; 57 (0)              ; 83 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 10   ; 0            ; 0          ; |max10_10m08_top                                                                                      ; max10_10m08_top                   ; work         ;
 ;    |nios2_system:u0|                             ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |max10_10m08_top|nios2_system:u0                                                                      ; nios2_system                      ; nios2_system ;
 ;       |nios2_system_altpll_0:altpll_0|           ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |max10_10m08_top|nios2_system:u0|nios2_system_altpll_0:altpll_0                                       ; nios2_system_altpll_0             ; nios2_system ;
 ;          |nios2_system_altpll_0_altpll_sc92:sd1| ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |max10_10m08_top|nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_altpll_sc92:sd1 ; nios2_system_altpll_0_altpll_sc92 ; nios2_system ;
-;    |ptmch_top:ptmch_inst|                        ; 37 (0)              ; 61 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |max10_10m08_top|ptmch_top:ptmch_inst                                                                 ; ptmch_top                         ; work         ;
-;       |ptmch_trg:trg_inst|                       ; 37 (37)             ; 61 (61)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst                                              ; ptmch_trg                         ; work         ;
+;    |ptmch_top:ptmch_inst|                        ; 57 (0)              ; 83 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |max10_10m08_top|ptmch_top:ptmch_inst                                                                 ; ptmch_top                         ; work         ;
+;       |ptmch_trg:trg_inst|                       ; 57 (57)             ; 83 (83)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst                                              ; ptmch_trg                         ; work         ;
 +--------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -286,52 +286,79 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 61    ;
+; Total registers                              ; 83    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 61    ;
+; Number of registers using Asynchronous Clear ; 83    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 16    ;
+; Number of registers using Clock Enable       ; 12    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------+
-; Physical Synthesis Netlist Optimizations                                                                ;
-+----------------------------------------------------------------+------------------+---------------------+
-; Node                                                           ; Action           ; Reason              ;
-+----------------------------------------------------------------+------------------+---------------------+
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[0]~1           ; Deleted          ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[0]~1_wirecell  ; Modified         ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[1]~3           ; Deleted          ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[1]~3_wirecell  ; Modified         ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[2]~4           ; Deleted          ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[2]~4_wirecell  ; Modified         ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[3]~6           ; Deleted          ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[3]~6_wirecell  ; Modified         ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[4]~8           ; Deleted          ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[4]~8_wirecell  ; Modified         ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[0]          ; Deleted          ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[0]_OTERM17  ; Retimed Register ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[0]_OTERM19  ; Retimed Register ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[0]_RTM014   ; Modified         ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[0]_RTM014   ; Retimed Register ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[0]~2        ; Modified         ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[0]~2_RTM020 ; Modified         ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[1]          ; Deleted          ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[1]_OTERM9   ; Retimed Register ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[1]_OTERM11  ; Retimed Register ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[1]_OTERM13  ; Retimed Register ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[1]~1        ; Modified         ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[1]~1_RTM015 ; Modified         ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[2]          ; Deleted          ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[2]_OTERM1   ; Retimed Register ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[2]_OTERM3   ; Retimed Register ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[2]_OTERM5   ; Retimed Register ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[2]_OTERM7   ; Retimed Register ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[3]          ; Deleted          ; Timing optimization ;
-; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[3]_OTERM22  ; Retimed Register ; Timing optimization ;
-+----------------------------------------------------------------+------------------+---------------------+
++---------------------------------------------------------------------------------------------------------------+
+; Physical Synthesis Netlist Optimizations                                                                      ;
++----------------------------------------------------------------------+------------------+---------------------+
+; Node                                                                 ; Action           ; Reason              ;
++----------------------------------------------------------------------+------------------+---------------------+
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[0]~0                 ; Deleted          ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[0]~0_wirecell        ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[1]~2                 ; Deleted          ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[1]~2_wirecell        ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[2]~3                 ; Deleted          ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[2]~3_wirecell        ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[3]~4                 ; Deleted          ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[3]~4_wirecell        ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[4]~7                 ; Deleted          ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS[4]~7_wirecell        ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS~1_RTM045             ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS~1_RTM045             ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS~6_RTM049             ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|TRG_PLS~6_RTM049             ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|WideNor0                     ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|WideNor0_RTM046              ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|WideNor0_RTM050              ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|ar_inst_mch_sft1             ; Deleted          ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|ar_inst_mch_sft1_OTERM42     ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|ar_inst_mch_sft1_OTERM44     ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|ar_inst_mch_sft1_OTERM48     ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|c_inst_edge                  ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|c_inst_edge_RTM060           ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[0]_OTERM18    ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[1]_OTERM26    ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[2]_OTERM30    ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[3]_OTERM28    ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[4]_OTERM38    ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[5]_OTERM40    ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[6]_OTERM20    ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[7]_OTERM22    ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[8]_OTERM34    ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[9]_OTERM32    ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[10]_OTERM36   ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_chk_3d[11]_OTERM24   ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_mch_sft2_RTM059      ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_inst_mch_sft2_RTM059      ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[0]                ; Deleted          ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[0]_RTM014         ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[0]_RTM014         ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[0]~3              ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[0]~3_RTM016       ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[1]                ; Deleted          ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[1]_OTERM9         ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[1]_OTERM11        ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[1]_OTERM13        ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[1]~2              ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[1]~2_RTM015       ; Modified         ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[2]                ; Deleted          ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[2]_OTERM1         ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[2]_OTERM3         ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[2]_OTERM5         ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[2]_OTERM7_OTERM52 ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[2]_OTERM7_OTERM54 ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[2]_OTERM7_OTERM56 ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[2]_OTERM7_OTERM58 ; Retimed Register ; Timing optimization ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|sr_pls_cnt[3]                ; Deleted          ; Timing optimization ;
++----------------------------------------------------------------------+------------------+---------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -438,17 +465,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +--------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: ptmch_top:ptmch_inst|ptmch_trg:trg_inst ;
-+--------------------+----------+------------------------------------------------------+
-; Parameter Name     ; Value    ; Type                                                 ;
-+--------------------+----------+------------------------------------------------------+
-; p_program_excute   ; 00010000 ; Unsigned Binary                                      ;
-; p_readstatus1      ; 00001111 ; Unsigned Binary                                      ;
-; p_readstatus2      ; 00000101 ; Unsigned Binary                                      ;
-; p_128kb_blockerase ; 11011000 ; Unsigned Binary                                      ;
-; p_pagedata_read    ; 00010011 ; Unsigned Binary                                      ;
-; p_writestatus1     ; 00011111 ; Unsigned Binary                                      ;
-; p_writestatus2     ; 00000001 ; Unsigned Binary                                      ;
-+--------------------+----------+------------------------------------------------------+
++--------------------+--------------+--------------------------------------------------+
+; Parameter Name     ; Value        ; Type                                             ;
++--------------------+--------------+--------------------------------------------------+
+; p_program_excute   ; 000100000000 ; Unsigned Binary                                  ;
+; p_readstatus1      ; 000011110000 ; Unsigned Binary                                  ;
+; p_readstatus2      ; 000001010000 ; Unsigned Binary                                  ;
+; p_128kb_blockerase ; 110110000000 ; Unsigned Binary                                  ;
+; p_pagedata_read    ; 000100110000 ; Unsigned Binary                                  ;
+; p_writestatus1     ; 000111111011 ; Unsigned Binary                                  ;
+; p_writestatus2     ; 000000011011 ; Unsigned Binary                                  ;
++--------------------+--------------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -545,19 +572,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 10                          ;
-; cycloneiii_ff         ; 61                          ;
-;     CLR               ; 45                          ;
-;     ENA CLR           ; 16                          ;
-; cycloneiii_lcell_comb ; 37                          ;
-;     normal            ; 37                          ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 4                           ;
-;         3 data inputs ; 5                           ;
-;         4 data inputs ; 27                          ;
+; cycloneiii_ff         ; 83                          ;
+;     CLR               ; 71                          ;
+;     ENA CLR           ; 12                          ;
+; cycloneiii_lcell_comb ; 57                          ;
+;     normal            ; 57                          ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 20                          ;
+;         4 data inputs ; 32                          ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.71                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.46                        ;
 +-----------------------+-----------------------------+
 
 
@@ -576,23 +603,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Wed Feb 12 16:05:12 2025
+    Info: Processing started: Wed Feb 12 16:08:15 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12248): Elaborating Platform Designer system entity "nios2_system.qsys"
-Info (12250): 2025.02.12.16:05:19 Progress: Loading ptmch_fpga-main/nios2_system.qsys
-Info (12250): 2025.02.12.16:05:20 Progress: Reading input file
-Info (12250): 2025.02.12.16:05:20 Progress: Adding altpll_0 [altpll 18.1]
+Info (12250): 2025.02.12.16:08:21 Progress: Loading ptmch_fpga-main/nios2_system.qsys
+Info (12250): 2025.02.12.16:08:22 Progress: Reading input file
+Info (12250): 2025.02.12.16:08:22 Progress: Adding altpll_0 [altpll 18.1]
 Warning (12251): Altpll_0: Used altpll 23.1 (instead of 18.1)
-Info (12250): 2025.02.12.16:05:20 Progress: Parameterizing module altpll_0
-Info (12250): 2025.02.12.16:05:20 Progress: Adding clk_0 [clock_source 18.1]
+Info (12250): 2025.02.12.16:08:22 Progress: Parameterizing module altpll_0
+Info (12250): 2025.02.12.16:08:22 Progress: Adding clk_0 [clock_source 18.1]
 Warning (12251): Clk_0: Used clock_source 23.1 (instead of 18.1)
-Info (12250): 2025.02.12.16:05:20 Progress: Parameterizing module clk_0
-Info (12250): 2025.02.12.16:05:20 Progress: Building connections
-Info (12250): 2025.02.12.16:05:20 Progress: Parameterizing connections
-Info (12250): 2025.02.12.16:05:20 Progress: Validating
-Info (12250): 2025.02.12.16:05:20 Progress: Done reading input file
+Info (12250): 2025.02.12.16:08:22 Progress: Parameterizing module clk_0
+Info (12250): 2025.02.12.16:08:22 Progress: Building connections
+Info (12250): 2025.02.12.16:08:22 Progress: Parameterizing connections
+Info (12250): 2025.02.12.16:08:22 Progress: Validating
+Info (12250): 2025.02.12.16:08:22 Progress: Done reading input file
 Warning (12251): Nios2_system.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
 Warning (12251): Nios2_system.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
 Info (12250): Nios2_system: Generating nios2_system "nios2_system" for QUARTUS_SYNTH
@@ -631,7 +658,7 @@ Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "nios
 Info (12128): Elaborating entity "ptmch_top" for hierarchy "ptmch_top:ptmch_inst" File: C:/work_fpga/ptmch_fpga-main/max10_10m08_top.sv Line: 52
 Info (12128): Elaborating entity "ptmch_trg" for hierarchy "ptmch_top:ptmch_inst|ptmch_trg:trg_inst" File: C:/work_fpga/ptmch_fpga-main/rtl/ptmch/ptmch_top.sv Line: 50
 Info (17026): Resynthesizing 0 WYSIWYG logic cells and I/Os using "speed" technology mapper which leaves 0 WYSIWYG logic cells and I/Os untouched
-Info (13000): Registers with preset signals will power-up high File: C:/work_fpga/ptmch_fpga-main/rtl/ptmch/ptmch_trg.sv Line: 148
+Info (13000): Registers with preset signals will power-up high File: C:/work_fpga/ptmch_fpga-main/rtl/ptmch/ptmch_trg.sv Line: 172
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
@@ -655,21 +682,21 @@ Info (332111): Found 3 clocks
     Info (332111):    9.000      SPI_CLK
     Info (332111):    6.250 u0|altpll_0|sd1|pll7|clk[1]
 Info (128002): Starting physical synthesis algorithm register retiming
-Info (128003): Physical synthesis algorithm register retiming complete: estimated slack improvement of 2 ps
+Info (128003): Physical synthesis algorithm register retiming complete: estimated slack improvement of 1022 ps
 Info (128002): Starting physical synthesis algorithm combinational resynthesis using boolean division
 Info (128003): Physical synthesis algorithm combinational resynthesis using boolean division complete: estimated slack improvement of 0 ps
 Info (128001): Physical synthesis optimizations for speed complete: elapsed time is 00:00:00
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 102 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 130 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 91 logic cells
+    Info (21061): Implemented 119 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
     Info: Peak virtual memory: 4937 megabytes
-    Info: Processing ended: Wed Feb 12 16:05:25 2025
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:30
+    Info: Processing ended: Wed Feb 12 16:08:26 2025
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:29
 
 
