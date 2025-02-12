@@ -38,6 +38,10 @@ module ptmch_trg(
 //=================================================================
     logic [ 7: 0]  sr_inst_sht;
     logic [ 3: 0]  sr_inst_cnt;
+    logic [ 3: 0]  ar_inst_cnt_1d;
+    logic [ 3: 0]  sr_inst_cnt_2d;
+    logic [ 3: 0]  sr_inst_cnt_3d;
+    logic [ 3: 0]  sr_inst_cnt_4d;
     logic [ 7: 0]  ar_inst_chk;
     logic [ 7: 0]  sr_inst_chk_1d;
     logic [ 7: 0]  sr_inst_chk_2d;
@@ -92,39 +96,66 @@ module ptmch_trg(
             else  // Count
                 sr_inst_cnt <= sr_inst_cnt + 1'b1;
       end
+
+    //  Instraction COUNTER 1clock delay
+    always_ff @(posedge CLK160M or negedge c_spi_reset_n) begin
+        if(!c_spi_reset_n)
+            ar_inst_cnt_1d  <= 4'b0000;
+        else
+            ar_inst_cnt_1d  <= sr_inst_cnt;
+      end
+    //  Instraction COUNTER 2clock delay
+    always_ff @(posedge CLK160M or negedge c_spi_reset_n) begin
+        if(!c_spi_reset_n)
+            sr_inst_cnt_2d  <= 4'b0000;
+        else
+            sr_inst_cnt_2d  <= ar_inst_cnt_1d;
+      end
+    //  Instraction COUNTER 3clock delay
+    always_ff @(posedge CLK160M or negedge c_spi_reset_n) begin
+        if(!c_spi_reset_n)
+            sr_inst_cnt_3d  <= 4'b0000;
+        else
+            sr_inst_cnt_3d  <= sr_inst_cnt_2d;
+      end
+    //  Instraction COUNTER 4clock delay
+    always_ff @(posedge CLK160M or negedge c_spi_reset_n) begin
+        if(!c_spi_reset_n)
+            sr_inst_cnt_4d  <= 4'b0000;
+        else if(sr_inst_cnt_2d == sr_inst_cnt_3d)
+            sr_inst_cnt_4d  <= sr_inst_cnt_3d;
+        else
+            sr_inst_cnt_4d  <= sr_inst_cnt_4d;
+      end
+
+
     // Instraction chk(async)
     always_ff @(posedge CLK160M or negedge RESET_N) begin
         if(!RESET_N)
             ar_inst_chk  <= 8'h0;
         else
-            if(sr_inst_cnt == 4'b1000 ) // Load          
+            if(sr_inst_cnt_4d == 4'b1000 ) // Load          
                 ar_inst_chk  <= sr_inst_sht;
             else
                 ar_inst_chk  <= ar_inst_chk;
     end
     // Instraction chk(1d)
-    always_ff @(posedge CLK160M or negedge RESET_N) begin
-        if(!RESET_N)
-            sr_inst_chk_1d  <= 8'h0;
-        else if(c_cs_edge)
+    always_ff @(posedge CLK160M or negedge c_spi_reset_n) begin
+        if(!c_spi_reset_n)
             sr_inst_chk_1d  <= 8'h0;
         else
             sr_inst_chk_1d  <= ar_inst_chk;
     end
     // Instraction chk(2d)
-    always_ff @(posedge CLK160M or negedge RESET_N) begin
-        if(!RESET_N)
+    always_ff @(posedge CLK160M or negedge c_spi_reset_n) begin
+        if(!c_spi_reset_n)
            sr_inst_chk_2d  <= 8'h0;
-        else if(c_cs_edge)
-            sr_inst_chk_2d  <= 8'h0;
         else
             sr_inst_chk_2d  <= sr_inst_chk_1d;
     end
     // Instraction chk(3d)
-    always_ff @(posedge CLK160M or negedge RESET_N) begin
-        if(!RESET_N)
-            sr_inst_chk_3d  <= 8'h0;
-        else if(c_cs_edge)
+    always_ff @(posedge CLK160M or negedge c_spi_reset_n) begin
+        if(!c_spi_reset_n)
             sr_inst_chk_3d  <= 8'h0;
         else if(sr_inst_chk_1d == sr_inst_chk_2d)
             sr_inst_chk_3d  <= sr_inst_chk_2d;
@@ -132,19 +163,15 @@ module ptmch_trg(
             sr_inst_chk_3d  <= sr_inst_chk_3d;
     end
     // Instracton Match pls(async)
-    always_ff @(posedge CLK160M or negedge RESET_N) begin
-        if(!RESET_N)
-            ar_inst_mch_sft1  <= 1'b0;
-        else if(c_cs_edge)
+    always_ff @(posedge CLK160M or negedge c_spi_reset_n) begin
+        if(!c_spi_reset_n)
             ar_inst_mch_sft1  <= 1'b0;
         else
             ar_inst_mch_sft1  <= c_inst_mch;
     end
     // Instracton Match pls(sync)
-    always_ff @(posedge CLK160M or negedge RESET_N) begin
-        if(!RESET_N)
-            sr_inst_mch_sft2  <= 1'b0;
-        else if(c_cs_edge)
+    always_ff @(posedge CLK160M or negedge c_spi_reset_n) begin
+        if(!c_spi_reset_n)
             sr_inst_mch_sft2  <= 1'b0;
         else
             sr_inst_mch_sft2  <= ar_inst_mch_sft1;
