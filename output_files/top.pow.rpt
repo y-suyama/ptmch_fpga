@@ -1,5 +1,5 @@
 Power Analyzer report for top
-Wed Feb 12 17:28:05 2025
+Tue Jun 10 21:34:42 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -53,29 +53,29 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.18        ;
+; Average used               ; 1.17        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   1.2%      ;
+;     Processors 2-16        ;   1.1%      ;
 +----------------------------+-------------+
 
 
 +-------------------------------------------------------------------------------------------+
 ; Power Analyzer Summary                                                                    ;
 +----------------------------------------+--------------------------------------------------+
-; Power Analyzer Status                  ; Successful - Wed Feb 12 17:28:05 2025            ;
+; Power Analyzer Status                  ; Successful - Tue Jun 10 21:34:42 2025            ;
 ; Quartus Prime Version                  ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition   ;
 ; Revision Name                          ; top                                              ;
 ; Top-level Entity Name                  ; max10_10m08_top                                  ;
 ; Family                                 ; MAX 10                                           ;
 ; Device                                 ; 10M08SAE144C8G                                   ;
 ; Power Models                           ; Final                                            ;
-; Total Thermal Power Dissipation        ; 211.30 mW                                        ;
-; Core Dynamic Thermal Power Dissipation ; 25.73 mW                                         ;
-; Core Static Thermal Power Dissipation  ; 134.84 mW                                        ;
-; I/O Thermal Power Dissipation          ; 50.74 mW                                         ;
+; Total Thermal Power Dissipation        ; 208.96 mW                                        ;
+; Core Dynamic Thermal Power Dissipation ; 23.90 mW                                         ;
+; Core Static Thermal Power Dissipation  ; 134.83 mW                                        ;
+; I/O Thermal Power Dissipation          ; 50.24 mW                                         ;
 ; Power Estimation Confidence            ; Low: user provided insufficient toggle rate data ;
 +----------------------------------------+--------------------------------------------------+
 
@@ -107,13 +107,13 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+---------------------------------------+---------------+
 
 
-+---------------------------------------+
-; Indeterminate Toggle Rates            ;
-+---------+-----------------------------+
-; Node    ; Reason                      ;
-+---------+-----------------------------+
-; RESET_N ; No valid clock domain found ;
-+---------+-----------------------------+
++----------------------------------------+
+; Indeterminate Toggle Rates             ;
++---------+------------------------------+
+; Node    ; Reason                       ;
++---------+------------------------------+
+; RESET_N ; Multiple clock domains found ;
++---------+------------------------------+
 
 
 +--------------------------------------------------------------------------+
@@ -153,11 +153,11 @@ https://fpgasoftware.intel.com/eula.
 ; Block Type          ; Total Thermal Power by Block Type ; Block Thermal Dynamic Power ; Block Thermal Static Power (1) ; Routing Thermal Dynamic Power ; Block Average Toggle Rate (millions of transitions / sec) ;
 +---------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
 ; PLL                 ; 8.85 mW                           ; 8.85 mW                     ; --                             ; 0.00 mW                       ;  160.000                                                  ;
-; Combinational cell  ; 0.18 mW                           ; 0.14 mW                     ; --                             ; 0.04 mW                       ;   11.941                                                  ;
-; Clock control block ; 2.14 mW                           ; 0.00 mW                     ; --                             ; 2.14 mW                       ;  320.000                                                  ;
-; Register cell       ; 1.24 mW                           ; 1.00 mW                     ; --                             ; 0.24 mW                       ;   18.743                                                  ;
-; I/O                 ; 3.35 mW                           ; 2.40 mW                     ; 0.81 mW                        ; 0.13 mW                       ;   20.659                                                  ;
-; Voltage Regulator   ; 14.08 mW                          ; 13.19 mW                    ; 0.89 mW                        ; --                            ; --                                                        ;
+; Combinational cell  ; 0.10 mW                           ; 0.06 mW                     ; --                             ; 0.04 mW                       ;    5.833                                                  ;
+; Clock control block ; 2.09 mW                           ; 0.00 mW                     ; --                             ; 2.09 mW                       ;  320.000                                                  ;
+; Register cell       ; 0.74 mW                           ; 0.63 mW                     ; --                             ; 0.11 mW                       ;   15.443                                                  ;
+; I/O                 ; 2.82 mW                           ; 1.90 mW                     ; 0.81 mW                        ; 0.10 mW                       ;   19.884                                                  ;
+; Voltage Regulator   ; 12.91 mW                          ; 12.02 mW                    ; 0.89 mW                        ; --                            ; --                                                        ;
 +---------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
 (1) The "Block Thermal Static Power" for all block types except Pins and the Voltage Regulator, if one exists, is part of the "Core Static Thermal Power Dissipation" value found on the PowerPlay Power Analyzer-->Summary report panel. The "Core Static Thermal Power Dissipation" also contains the thermal static power dissipated by the routing.
 
@@ -167,13 +167,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+------------------------------------------------------------------------------------------------------------+
 ; Compilation Hierarchy Node                              ; Total Thermal Power by Hierarchy (1) ; Block Thermal Dynamic Power (1) ; Block Thermal Static Power (1)(2) ; Routing Thermal Dynamic Power (1) ; Full Hierarchy Name                                                                                        ;
 +---------------------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+------------------------------------------------------------------------------------------------------------+
-; |max10_10m08_top                                        ; 29.84 mW (17.43 mW)                  ; 25.58 mW (15.59 mW)             ; 1.70 mW (1.70 mW)                 ; 2.55 mW (0.13 mW)                 ; |max10_10m08_top                                                                                           ;
+; |max10_10m08_top                                        ; 27.50 mW (15.73 mW)                  ; 23.46 mW (13.92 mW)             ; 1.70 mW (1.70 mW)                 ; 2.34 mW (0.10 mW)                 ; |max10_10m08_top                                                                                           ;
 ;     |hard_block:auto_generated_inst                     ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |max10_10m08_top|hard_block:auto_generated_inst                                                            ;
-;     |ptmch_top:ptmch_inst                               ; 1.42 mW (0.00 mW)                    ; 1.14 mW (0.00 mW)               ; --                                ; 0.28 mW (0.00 mW)                 ; |max10_10m08_top|ptmch_top:ptmch_inst                                                                      ;
-;         |ptmch_trg:trg_inst                             ; 1.42 mW (1.42 mW)                    ; 1.14 mW (1.14 mW)               ; --                                ; 0.28 mW (0.28 mW)                 ; |max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst                                                   ;
-;     |nios2_system:u0                                    ; 10.99 mW (0.00 mW)                   ; 8.85 mW (0.00 mW)               ; --                                ; 2.14 mW (0.00 mW)                 ; |max10_10m08_top|nios2_system:u0                                                                           ;
-;         |nios2_system_altpll_0:altpll_0                 ; 10.99 mW (0.00 mW)                   ; 8.85 mW (0.00 mW)               ; --                                ; 2.14 mW (0.00 mW)                 ; |max10_10m08_top|nios2_system:u0|nios2_system_altpll_0:altpll_0                                            ;
-;             |nios2_system_altpll_0_altpll_sc92:sd1      ; 10.99 mW (10.99 mW)                  ; 8.85 mW (8.85 mW)               ; --                                ; 2.14 mW (2.14 mW)                 ; |max10_10m08_top|nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_altpll_sc92:sd1      ;
+;     |ptmch_top:ptmch_inst                               ; 0.84 mW (0.00 mW)                    ; 0.69 mW (0.00 mW)               ; --                                ; 0.15 mW (0.00 mW)                 ; |max10_10m08_top|ptmch_top:ptmch_inst                                                                      ;
+;         |ptmch_trg:trg_inst                             ; 0.84 mW (0.84 mW)                    ; 0.69 mW (0.69 mW)               ; --                                ; 0.15 mW (0.15 mW)                 ; |max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst                                                   ;
+;     |nios2_system:u0                                    ; 10.94 mW (0.00 mW)                   ; 8.85 mW (0.00 mW)               ; --                                ; 2.09 mW (0.00 mW)                 ; |max10_10m08_top|nios2_system:u0                                                                           ;
+;         |nios2_system_altpll_0:altpll_0                 ; 10.94 mW (0.00 mW)                   ; 8.85 mW (0.00 mW)               ; --                                ; 2.09 mW (0.00 mW)                 ; |max10_10m08_top|nios2_system:u0|nios2_system_altpll_0:altpll_0                                            ;
+;             |nios2_system_altpll_0_altpll_sc92:sd1      ; 10.94 mW (10.94 mW)                  ; 8.85 mW (8.85 mW)               ; --                                ; 2.09 mW (2.09 mW)                 ; |max10_10m08_top|nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_altpll_sc92:sd1      ;
 ;             |nios2_system_altpll_0_stdsync_sv6:stdsync2 ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |max10_10m08_top|nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_stdsync_sv6:stdsync2 ;
 ;         |altera_reset_controller:rst_controller         ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |max10_10m08_top|nios2_system:u0|altera_reset_controller:rst_controller                                    ;
 +---------------------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+------------------------------------------------------------------------------------------------------------+
@@ -187,9 +187,9 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------------------------+-----------------------+--------------------------+
 ; Clock Domain                                                                                          ; Clock Frequency (MHz) ; Total Core Dynamic Power ;
 +-------------------------------------------------------------------------------------------------------+-----------------------+--------------------------+
-; nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_altpll_sc92:sd1|wire_pll7_clk[1] ; 160.00                ; 3.38                     ;
+; nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_altpll_sc92:sd1|wire_pll7_clk[1] ; 160.00                ; 2.77                     ;
 ; CLK50M                                                                                                ; 50.00                 ; 0.00                     ;
-; SPI_CLK                                                                                               ; 111.11                ; 0.31                     ;
+; SPI_CLK                                                                                               ; 111.11                ; 0.26                     ;
 ; No clock domain                                                                                       ; 0.00                  ; 8.85                     ;
 +-------------------------------------------------------------------------------------------------------+-----------------------+--------------------------+
 
@@ -199,9 +199,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
 ; Voltage Supply ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
 +----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
-; VCCIO          ; 15.37 mA                ; 0.67 mA                   ; 14.70 mA                 ; 15.37 mA                         ;
+; VCCIO          ; 15.22 mA                ; 0.52 mA                   ; 14.70 mA                 ; 15.22 mA                         ;
 ; VCCA           ; 5.03 mA                 ; 1.54 mA                   ; 3.49 mA                  ; 5.03 mA                          ;
-; VCC_ONE        ; 43.65 mA                ; 6.28 mA                   ; 37.37 mA                 ; 43.65 mA                         ;
+; VCC_ONE        ; 43.09 mA                ; 5.72 mA                   ; 37.37 mA                 ; 43.09 mA                         ;
 +----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
 (1) Currents reported in columns "Total Current Drawn", "Dynamic Current Drawn", and "Static Current Drawn" are sufficient for user operation of the device.  
 (2) Currents reported in column "Minimum Power Supply Current" are sufficient for power-up, configuration, and user operation of the device.
@@ -215,7 +215,7 @@ https://fpgasoftware.intel.com/eula.
 ; 1A       ; 3.3V          ; 1.60 mA             ; 0.00 mA               ; 1.60 mA              ;
 ; 1B       ; 3.3V          ; 1.67 mA             ; 0.00 mA               ; 1.67 mA              ;
 ; 2        ; 3.3V          ; 1.76 mA             ; 0.14 mA               ; 1.62 mA              ;
-; 3        ; 3.3V          ; 2.27 mA             ; 0.53 mA               ; 1.74 mA              ;
+; 3        ; 3.3V          ; 2.12 mA             ; 0.38 mA               ; 1.73 mA              ;
 ; 4        ; 3.3V          ; 1.60 mA             ; 0.00 mA               ; 1.60 mA              ;
 ; 5        ; 3.3V          ; 1.60 mA             ; 0.00 mA               ; 1.60 mA              ;
 ; 6        ; 3.3V          ; 1.60 mA             ; 0.00 mA               ; 1.60 mA              ;
@@ -229,7 +229,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
 ; VCCIO Voltage ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
 +---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
-; 3.3V          ; 15.37 mA                ; 0.67 mA                   ; 14.70 mA                 ; 15.37 mA                         ;
+; 3.3V          ; 15.22 mA                ; 0.52 mA                   ; 14.70 mA                 ; 15.22 mA                         ;
 +---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
 (1) Currents reported in columns "Total Current Drawn", "Dynamic Current Drawn", and "Static Current Drawn" are sufficient for user operation of the device.  
 (2) Currents reported in column "Minimum Power Supply Current" are sufficient for power-up, configuration, and user operation of the device.
@@ -245,20 +245,20 @@ https://fpgasoftware.intel.com/eula.
 ;     -- Number of signals with Static Probability from Simulation                       ; 0 (0.0%)    ; 0 (0.0%)   ; 0 (0.0%)    ; 0 (0.0%)      ;
 ;                                                                                        ;             ;            ;             ;               ;
 ; Node, entity or clock assignment                                                       ;             ;            ;             ;               ;
-;     -- Number of signals with Toggle Rate from Node, entity or clock assignment        ; 4 (1.7%)    ; 2 (11.1%)  ; 0 (0.0%)    ; 2 (1.6%)      ;
-;     -- Number of signals with Static Probability from Node, entity or clock assignment ; 4 (1.7%)    ; 2 (11.1%)  ; 0 (0.0%)    ; 2 (1.6%)      ;
+;     -- Number of signals with Toggle Rate from Node, entity or clock assignment        ; 4 (2.6%)    ; 2 (11.1%)  ; 0 (0.0%)    ; 2 (2.5%)      ;
+;     -- Number of signals with Static Probability from Node, entity or clock assignment ; 4 (2.6%)    ; 2 (11.1%)  ; 0 (0.0%)    ; 2 (2.5%)      ;
 ;                                                                                        ;             ;            ;             ;               ;
 ; Vectorless estimation                                                                  ;             ;            ;             ;               ;
-;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 225 (94.1%) ; 6 (33.3%)  ; 99 (100.0%) ; 120 (98.4%)   ;
-;     -- Number of signals with Zero toggle rate, from Vectorless estimation             ; 5 (2.1%)    ; 1 (5.6%)   ; 0 (0.0%)    ; 4 (3.3%)      ;
-;     -- Number of signals with Static Probability from Vectorless estimation            ; 225 (94.1%) ; 6 (33.3%)  ; 99 (100.0%) ; 120 (98.4%)   ;
+;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 138 (90.8%) ; 6 (33.3%)  ; 55 (100.0%) ; 77 (97.5%)    ;
+;     -- Number of signals with Zero toggle rate, from Vectorless estimation             ; 13 (8.6%)   ; 5 (27.8%)  ; 0 (0.0%)    ; 8 (10.1%)     ;
+;     -- Number of signals with Static Probability from Vectorless estimation            ; 138 (90.8%) ; 6 (33.3%)  ; 55 (100.0%) ; 77 (97.5%)    ;
 ;                                                                                        ;             ;            ;             ;               ;
 ; Default assignment                                                                     ;             ;            ;             ;               ;
-;     -- Number of signals with Toggle Rate from Default assignment                      ; 2 (0.8%)    ; 2 (11.1%)  ; 0 (0.0%)    ; 0 (0.0%)      ;
-;     -- Number of signals with Static Probability from Default assignment               ; 10 (4.2%)   ; 10 (55.6%) ; 0 (0.0%)    ; 0 (0.0%)      ;
+;     -- Number of signals with Toggle Rate from Default assignment                      ; 2 (1.3%)    ; 2 (11.1%)  ; 0 (0.0%)    ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Default assignment               ; 10 (6.6%)   ; 10 (55.6%) ; 0 (0.0%)    ; 0 (0.0%)      ;
 ;                                                                                        ;             ;            ;             ;               ;
 ; Assumed 0                                                                              ;             ;            ;             ;               ;
-;     -- Number of signals with Toggle Rate assumed 0                                    ; 8 (3.3%)    ; 8 (44.4%)  ; 0 (0.0%)    ; 0 (0.0%)      ;
+;     -- Number of signals with Toggle Rate assumed 0                                    ; 8 (5.3%)    ; 8 (44.4%)  ; 0 (0.0%)    ; 0 (0.0%)      ;
 +----------------------------------------------------------------------------------------+-------------+------------+-------------+---------------+
 
 
@@ -276,7 +276,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Power Analyzer
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Wed Feb 12 17:28:04 2025
+    Info: Processing started: Tue Jun 10 21:34:41 2025
 Info: Command: quartus_pow --read_settings_files=off --write_settings_files=off top -c top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (21077): Low junction temperature is 0 degrees C
@@ -291,16 +291,16 @@ Critical Warning (332168): The following clock transfers have no clock uncertain
     Critical Warning (332169): From SPI_CLK (Rise) to u0|altpll_0|sd1|pll7|clk[1] (Rise) (setup and hold)
     Critical Warning (332169): From u0|altpll_0|sd1|pll7|clk[1] (Rise) to u0|altpll_0|sd1|pll7|clk[1] (Rise) (setup and hold)
 Info (223000): Starting Vectorless Power Activity Estimation
-Warning (222013): Relative toggle rates could not be calculated because no clock domain could be identified for some nodes
+Warning (222019): Relative toggle rates could not be calculated because no unique register clock domain could be identified for some nodes
 Info (223001): Completed Vectorless Power Activity Estimation
 Info (218000): Using Advanced I/O Power to simulate I/O buffers with the specified board trace model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (215049): Average toggle rate for this design is 18.233 millions of transitions / sec
-Info (215031): Total thermal power estimate for the design is 211.30 mW
+Info (215049): Average toggle rate for this design is 15.790 millions of transitions / sec
+Info (215031): Total thermal power estimate for the design is 208.96 mW
 Info: Quartus Prime Power Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4956 megabytes
-    Info: Processing ended: Wed Feb 12 17:28:05 2025
+    Info: Peak virtual memory: 4967 megabytes
+    Info: Processing ended: Tue Jun 10 21:34:42 2025
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

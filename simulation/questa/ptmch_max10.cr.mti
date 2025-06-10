@@ -1,0 +1,22 @@
+C:/work_fpga/ptmch_fpga-main/rtl/ptmch/ptmch_trg.sv {1 {vlog -work work -vopt -sv -stats=none C:/work_fpga/ptmch_fpga-main/rtl/ptmch/ptmch_trg.sv
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module ptmch_trg
+
+Top level modules:
+	ptmch_trg
+
+} {} {}} C:/work_fpga/ptmch_fpga-main/rtl/tb/ptmch_top_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/work_fpga/ptmch_fpga-main/rtl/tb/ptmch_top_tb.sv
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module ptmch_top_tb
+
+Top level modules:
+	ptmch_top_tb
+
+} {} {}} C:/work_fpga/ptmch_fpga-main/rtl/ptmch/ptmch_top.sv {1 {vlog -work work -vopt -sv -stats=none C:/work_fpga/ptmch_fpga-main/rtl/ptmch/ptmch_top.sv
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module ptmch_top
+
+Top level modules:
+	ptmch_top
+
+} {} {}}
