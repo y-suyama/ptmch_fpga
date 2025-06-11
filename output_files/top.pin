@@ -119,12 +119,12 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 46        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : 47        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 48        :        :                   :         : 3         :                
 VCCIO3                       : 49        : power  :                   : 3.3V    : 3         :                
-TRG_PLS[4]                   : 50        : output : 3.3-V LVCMOS      :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 50        :        :                   :         : 3         :                
 VCC_ONE                      : 51        : power  :                   : 3.0V/3.3V :           :                
-TRG_PLS[3]                   : 52        : output : 3.3-V LVCMOS      :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 52        :        :                   :         : 3         :                
 GND                          : 53        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 54        :        :                   :         : 3         :                
-TRG_PLS[2]                   : 55        : output : 3.3-V LVCMOS      :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 55        :        :                   :         : 3         :                
 TRG_PLS[1]                   : 56        : output : 3.3-V LVCMOS      :         : 3         : Y              
 TRG_PLS[0]                   : 57        : output : 3.3-V LVCMOS      :         : 3         : Y              
 SPI_MOSI                     : 58        : input  : 3.3-V LVCMOS      :         : 3         : Y              

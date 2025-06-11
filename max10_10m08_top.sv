@@ -21,7 +21,7 @@ module max10_10m08_top(
     input  logic         SPI_CS,
     input  logic         SPI_CLK,
     input  logic         SPI_MOSI,
-    output logic [ 4: 0] TRG_PLS
+    output logic [ 1: 0] TRG_PLS
 );
 //=================================================================
 //  Internal Signal

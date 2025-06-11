@@ -82,7 +82,7 @@ module ptmch_trg(
         if(!c_spi_reset_n)
             sr_inst_cnt  <= 4'h0;
         else
-            if(sr_inst_cnt == 4'h9 )// STOP
+            if(sr_inst_cnt == 4'h8 )// STOP
                 sr_inst_cnt  <= sr_inst_cnt;
             else  // Count
                 sr_inst_cnt <= sr_inst_cnt + 1'b1;
