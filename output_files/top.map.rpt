@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top
-Tue Jun 10 21:27:15 2025
+Wed Jun 11 10:24:14 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -17,15 +17,15 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   9. Registers Removed During Synthesis
  10. Removed Registers Triggering Further Register Optimizations
  11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for nios2_system:u0|nios2_system_altpll_0:altpll_0
- 14. Source assignments for nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_stdsync_sv6:stdsync2|nios2_system_altpll_0_dffpipe_l2c:dffpipe3
- 15. Source assignments for nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
- 16. Source assignments for nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
- 17. Parameter Settings for User Entity Instance: nios2_system:u0|altera_reset_controller:rst_controller
- 18. Parameter Settings for User Entity Instance: nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
- 19. Parameter Settings for User Entity Instance: nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
- 20. Parameter Settings for User Entity Instance: ptmch_top:ptmch_inst|ptmch_trg:trg_inst
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for nios2_system:u0|nios2_system_altpll_0:altpll_0
+ 15. Source assignments for nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_stdsync_sv6:stdsync2|nios2_system_altpll_0_dffpipe_l2c:dffpipe3
+ 16. Source assignments for nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+ 17. Source assignments for nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
+ 18. Parameter Settings for User Entity Instance: nios2_system:u0|altera_reset_controller:rst_controller
+ 19. Parameter Settings for User Entity Instance: nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+ 20. Parameter Settings for User Entity Instance: nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
  21. Port Connectivity Checks: "ptmch_top:ptmch_inst"
  22. Port Connectivity Checks: "nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
  23. Port Connectivity Checks: "nios2_system:u0|altera_reset_controller:rst_controller"
@@ -60,15 +60,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 10 21:27:15 2025          ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun 11 10:24:14 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; top                                            ;
 ; Top-level Entity Name              ; max10_10m08_top                                ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 65                                             ;
-;     Total combinational functions  ; 58                                             ;
-;     Dedicated logic registers      ; 55                                             ;
-; Total registers                    ; 55                                             ;
+; Total logic elements               ; 70                                             ;
+;     Total combinational functions  ; 40                                             ;
+;     Dedicated logic registers      ; 58                                             ;
+; Total registers                    ; 58                                             ;
 ; Total pins                         ; 10                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -197,39 +197,39 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+--------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                                                                         ;
-+---------------------------------------------+-------------------------------------------------------------------------------------------------------+
-; Resource                                    ; Usage                                                                                                 ;
-+---------------------------------------------+-------------------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 65                                                                                                    ;
-;                                             ;                                                                                                       ;
-; Total combinational functions               ; 58                                                                                                    ;
-; Logic element usage by number of LUT inputs ;                                                                                                       ;
-;     -- 4 input functions                    ; 44                                                                                                    ;
-;     -- 3 input functions                    ; 7                                                                                                     ;
-;     -- <=2 input functions                  ; 7                                                                                                     ;
-;                                             ;                                                                                                       ;
-; Logic elements by mode                      ;                                                                                                       ;
-;     -- normal mode                          ; 58                                                                                                    ;
-;     -- arithmetic mode                      ; 0                                                                                                     ;
-;                                             ;                                                                                                       ;
-; Total registers                             ; 55                                                                                                    ;
-;     -- Dedicated logic registers            ; 55                                                                                                    ;
-;     -- I/O registers                        ; 0                                                                                                     ;
-;                                             ;                                                                                                       ;
-; I/O pins                                    ; 10                                                                                                    ;
-;                                             ;                                                                                                       ;
-; Embedded Multiplier 9-bit elements          ; 0                                                                                                     ;
-;                                             ;                                                                                                       ;
-; Total PLLs                                  ; 1                                                                                                     ;
-;     -- PLLs                                 ; 1                                                                                                     ;
-;                                             ;                                                                                                       ;
-; Maximum fan-out node                        ; nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_altpll_sc92:sd1|wire_pll7_clk[0] ;
-; Maximum fan-out                             ; 44                                                                                                    ;
-; Total fan-out                               ; 342                                                                                                   ;
-; Average fan-out                             ; 2.55                                                                                                  ;
-+---------------------------------------------+-------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 70            ;
+;                                             ;               ;
+; Total combinational functions               ; 40            ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 17            ;
+;     -- 3 input functions                    ; 19            ;
+;     -- <=2 input functions                  ; 4             ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 40            ;
+;     -- arithmetic mode                      ; 0             ;
+;                                             ;               ;
+; Total registers                             ; 58            ;
+;     -- Dedicated logic registers            ; 58            ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 10            ;
+;                                             ;               ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+;                                             ;               ;
+; Total PLLs                                  ; 1             ;
+;     -- PLLs                                 ; 1             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; RESET_N~input ;
+; Maximum fan-out                             ; 58            ;
+; Total fan-out                               ; 326           ;
+; Average fan-out                             ; 2.74          ;
++---------------------------------------------+---------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -237,12 +237,12 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                   ; Entity Name                       ; Library Name ;
 +--------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |max10_10m08_top                                 ; 58 (0)              ; 55 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 10   ; 0            ; 0          ; |max10_10m08_top                                                                                      ; max10_10m08_top                   ; work         ;
+; |max10_10m08_top                                 ; 40 (0)              ; 58 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 10   ; 0            ; 0          ; |max10_10m08_top                                                                                      ; max10_10m08_top                   ; work         ;
 ;    |nios2_system:u0|                             ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |max10_10m08_top|nios2_system:u0                                                                      ; nios2_system                      ; nios2_system ;
 ;       |nios2_system_altpll_0:altpll_0|           ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |max10_10m08_top|nios2_system:u0|nios2_system_altpll_0:altpll_0                                       ; nios2_system_altpll_0             ; nios2_system ;
 ;          |nios2_system_altpll_0_altpll_sc92:sd1| ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |max10_10m08_top|nios2_system:u0|nios2_system_altpll_0:altpll_0|nios2_system_altpll_0_altpll_sc92:sd1 ; nios2_system_altpll_0_altpll_sc92 ; nios2_system ;
-;    |ptmch_top:ptmch_inst|                        ; 58 (0)              ; 55 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |max10_10m08_top|ptmch_top:ptmch_inst                                                                 ; ptmch_top                         ; work         ;
-;       |ptmch_trg:trg_inst|                       ; 58 (58)             ; 55 (55)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst                                              ; ptmch_trg                         ; work         ;
+;    |ptmch_top:ptmch_inst|                        ; 40 (0)              ; 58 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |max10_10m08_top|ptmch_top:ptmch_inst                                                                 ; ptmch_top                         ; work         ;
+;       |ptmch_trg:trg_inst|                       ; 40 (40)             ; 58 (58)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst                                              ; ptmch_trg                         ; work         ;
 +--------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -286,25 +286,41 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 55    ;
+; Total registers                              ; 58    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 58    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 8     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst|reg_inst_chk_stage0[0] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst|pls_counter[2]         ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst|reg_shift_cnt[0]       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
++-----------------------------------------------------------------+
+; Inverted Register Statistics                                    ;
++-------------------------------------------------------+---------+
+; Inverted Register                                     ; Fan out ;
++-------------------------------------------------------+---------+
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|spi_cs_q2     ; 9       ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|spi_cs_q1     ; 10      ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|spi_cs_2d_clk ; 11      ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|spi_cs_1d_clk ; 12      ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|spi_cs_sync   ; 1       ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|spi_cs_2d_sys ; 1       ;
+; ptmch_top:ptmch_inst|ptmch_trg:trg_inst|spi_cs_1d_sys ; 1       ;
+; Total number of inverted registers = 7                ;         ;
++-------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst|inst_pipe0[7]    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst|pulse_counter[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |max10_10m08_top|ptmch_top:ptmch_inst|ptmch_trg:trg_inst|shift_cnt[3]     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------+
@@ -397,16 +413,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ASYNC_RESET    ; 0     ; Signed Integer                                                                                                            ;
 ; DEPTH          ; 2     ; Signed Integer                                                                                                            ;
 +----------------+-------+---------------------------------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ptmch_top:ptmch_inst|ptmch_trg:trg_inst ;
-+-------------------+----------+-------------------------------------------------------+
-; Parameter Name    ; Value    ; Type                                                  ;
-+-------------------+----------+-------------------------------------------------------+
-; P_PROGRAM_EXECUTE ; 00000010 ; Unsigned Binary                                       ;
-+-------------------+----------+-------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -512,19 +518,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 10                          ;
-; cycloneiii_ff         ; 55                          ;
-;     ENA               ; 8                           ;
-;     plain             ; 47                          ;
-; cycloneiii_lcell_comb ; 59                          ;
-;     normal            ; 59                          ;
+; cycloneiii_ff         ; 58                          ;
+;     CLR               ; 50                          ;
+;     ENA CLR           ; 8                           ;
+; cycloneiii_lcell_comb ; 41                          ;
+;     normal            ; 41                          ;
 ;         0 data inputs ; 1                           ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 7                           ;
-;         4 data inputs ; 44                          ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 19                          ;
+;         4 data inputs ; 17                          ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.40                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.04                        ;
 +-----------------------+-----------------------------+
 
 
@@ -533,7 +540,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -543,23 +550,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue Jun 10 21:27:02 2025
+    Info: Processing started: Wed Jun 11 10:24:00 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12248): Elaborating Platform Designer system entity "nios2_system.qsys"
-Info (12250): 2025.06.10.21:27:09 Progress: Loading ptmch_fpga-main/nios2_system.qsys
-Info (12250): 2025.06.10.21:27:10 Progress: Reading input file
-Info (12250): 2025.06.10.21:27:10 Progress: Adding altpll_0 [altpll 18.1]
+Info (12250): 2025.06.11.10:24:08 Progress: Loading ptmch_fpga-main/nios2_system.qsys
+Info (12250): 2025.06.11.10:24:08 Progress: Reading input file
+Info (12250): 2025.06.11.10:24:08 Progress: Adding altpll_0 [altpll 18.1]
 Warning (12251): Altpll_0: Used altpll 23.1 (instead of 18.1)
-Info (12250): 2025.06.10.21:27:11 Progress: Parameterizing module altpll_0
-Info (12250): 2025.06.10.21:27:11 Progress: Adding clk_0 [clock_source 18.1]
+Info (12250): 2025.06.11.10:24:09 Progress: Parameterizing module altpll_0
+Info (12250): 2025.06.11.10:24:09 Progress: Adding clk_0 [clock_source 18.1]
 Warning (12251): Clk_0: Used clock_source 23.1 (instead of 18.1)
-Info (12250): 2025.06.10.21:27:11 Progress: Parameterizing module clk_0
-Info (12250): 2025.06.10.21:27:11 Progress: Building connections
-Info (12250): 2025.06.10.21:27:11 Progress: Parameterizing connections
-Info (12250): 2025.06.10.21:27:11 Progress: Validating
-Info (12250): 2025.06.10.21:27:11 Progress: Done reading input file
+Info (12250): 2025.06.11.10:24:09 Progress: Parameterizing module clk_0
+Info (12250): 2025.06.11.10:24:09 Progress: Building connections
+Info (12250): 2025.06.11.10:24:09 Progress: Parameterizing connections
+Info (12250): 2025.06.11.10:24:09 Progress: Validating
+Info (12250): 2025.06.11.10:24:09 Progress: Done reading input file
 Warning (12251): Nios2_system.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
 Warning (12251): Nios2_system.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
 Info (12250): Nios2_system: Generating nios2_system "nios2_system" for QUARTUS_SYNTH
@@ -586,8 +593,6 @@ Info (12021): Found 4 design units, including 4 entities, in source file db/ip/n
     Info (12023): Found entity 2: nios2_system_altpll_0_stdsync_sv6 File: C:/work_fpga/ptmch_fpga-main/db/ip/nios2_system/submodules/nios2_system_altpll_0.v Line: 99
     Info (12023): Found entity 3: nios2_system_altpll_0_altpll_sc92 File: C:/work_fpga/ptmch_fpga-main/db/ip/nios2_system/submodules/nios2_system_altpll_0.v Line: 131
     Info (12023): Found entity 4: nios2_system_altpll_0 File: C:/work_fpga/ptmch_fpga-main/db/ip/nios2_system/submodules/nios2_system_altpll_0.v Line: 218
-Warning (10236): Verilog HDL Implicit Net warning at ptmch_trg.sv(34): created implicit net for "inst_edge" File: C:/work_fpga/ptmch_fpga-main/rtl/ptmch/ptmch_trg.sv Line: 34
-Warning (10236): Verilog HDL Implicit Net warning at ptmch_trg.sv(35): created implicit net for "cs_falling_edge" File: C:/work_fpga/ptmch_fpga-main/rtl/ptmch/ptmch_trg.sv Line: 35
 Info (12127): Elaborating entity "max10_10m08_top" for the top level hierarchy
 Info (12128): Elaborating entity "nios2_system" for hierarchy "nios2_system:u0" File: C:/work_fpga/ptmch_fpga-main/max10_10m08_top.sv Line: 41
 Info (12128): Elaborating entity "nios2_system_altpll_0" for hierarchy "nios2_system:u0|nios2_system_altpll_0:altpll_0" File: C:/work_fpga/ptmch_fpga-main/db/ip/nios2_system/nios2_system.v Line: 39
@@ -599,11 +604,13 @@ Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "nios
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "nios2_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1" File: C:/work_fpga/ptmch_fpga-main/db/ip/nios2_system/submodules/altera_reset_controller.v Line: 220
 Info (12128): Elaborating entity "ptmch_top" for hierarchy "ptmch_top:ptmch_inst" File: C:/work_fpga/ptmch_fpga-main/max10_10m08_top.sv Line: 52
 Info (12128): Elaborating entity "ptmch_trg" for hierarchy "ptmch_top:ptmch_inst|ptmch_trg:trg_inst" File: C:/work_fpga/ptmch_fpga-main/rtl/ptmch/ptmch_top.sv Line: 50
-Warning (10230): Verilog HDL assignment warning at ptmch_trg.sv(50): truncated value with size 32 to match size of target (4) File: C:/work_fpga/ptmch_fpga-main/rtl/ptmch/ptmch_trg.sv Line: 50
-Warning (10230): Verilog HDL assignment warning at ptmch_trg.sv(85): truncated value with size 32 to match size of target (4) File: C:/work_fpga/ptmch_fpga-main/rtl/ptmch/ptmch_trg.sv Line: 85
+Warning (10230): Verilog HDL assignment warning at ptmch_trg.sv(83): truncated value with size 32 to match size of target (4) File: C:/work_fpga/ptmch_fpga-main/rtl/ptmch/ptmch_trg.sv Line: 83
+Warning (10230): Verilog HDL assignment warning at ptmch_trg.sv(126): truncated value with size 32 to match size of target (4) File: C:/work_fpga/ptmch_fpga-main/rtl/ptmch/ptmch_trg.sv Line: 126
 Info (286030): Timing-Driven Synthesis is running
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (17026): Resynthesizing 0 WYSIWYG logic cells and I/Os using "speed" technology mapper which leaves 0 WYSIWYG logic cells and I/Os untouched
+Info (13000): Registers with preset signals will power-up high File: C:/work_fpga/ptmch_fpga-main/rtl/ptmch/ptmch_trg.sv Line: 32
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "TRG_PLS[1]" is stuck at GND File: C:/work_fpga/ptmch_fpga-main/max10_10m08_top.sv Line: 25
     Warning (13410): Pin "TRG_PLS[2]" is stuck at GND File: C:/work_fpga/ptmch_fpga-main/max10_10m08_top.sv Line: 25
@@ -619,7 +626,6 @@ Info (332110): Deriving PLL clocks
 Info (332104): Reading SDC File: 'c:/work_fpga/ptmch_fpga-main/db/ip/nios2_system/submodules/altera_reset_controller.sdc'
 Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
     Critical Warning (332169): From SPI_CLK (Rise) to SPI_CLK (Rise) (setup and hold)
-    Critical Warning (332169): From u0|altpll_0|sd1|pll7|clk[1] (Rise) to SPI_CLK (Rise) (setup and hold)
     Critical Warning (332169): From SPI_CLK (Rise) to u0|altpll_0|sd1|pll7|clk[1] (Rise) (setup and hold)
     Critical Warning (332169): From u0|altpll_0|sd1|pll7|clk[1] (Rise) to u0|altpll_0|sd1|pll7|clk[1] (Rise) (setup and hold)
 Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
@@ -627,7 +633,7 @@ Info (332111): Found 3 clocks
     Info (332111):   Period   Clock Name
     Info (332111): ======== ============
     Info (332111):   20.000       CLK50M
-    Info (332111):    9.000      SPI_CLK
+    Info (332111):   20.000      SPI_CLK
     Info (332111):    6.250 u0|altpll_0|sd1|pll7|clk[1]
 Info (128002): Starting physical synthesis algorithm register retiming
 Info (128003): Physical synthesis algorithm register retiming complete: estimated slack improvement of 0 ps
@@ -636,15 +642,15 @@ Info (128003): Physical synthesis algorithm combinational resynthesis using bool
 Info (128001): Physical synthesis optimizations for speed complete: elapsed time is 00:00:00
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 83 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 81 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 72 logic cells
+    Info (21061): Implemented 70 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 22 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
     Info: Peak virtual memory: 4940 megabytes
-    Info: Processing ended: Tue Jun 10 21:27:15 2025
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:37
+    Info: Processing ended: Wed Jun 11 10:24:14 2025
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:38
 
 

@@ -6,7 +6,7 @@
 #**************************************************************
 # Create Clock
 #**************************************************************
-create_clock -period 9   [get_ports SPI_CLK]
+create_clock -period 20  [get_ports SPI_CLK]
 create_clock -period 20  [get_ports CLK50M]
 
 #**************************************************************
