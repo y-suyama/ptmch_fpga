@@ -8,11 +8,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "TRG_PLS[1]",
+					"strict" : false
+				},
+				{
 					"name" : "RESET_N",
 					"strict" : false
 				},
 				{
-					"name" : "SPI_CLK",
+					"name" : "SPI_CS",
 					"strict" : false
 				},
 				{
@@ -20,7 +24,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SPI_CS",
+					"name" : "SPI_CLK",
 					"strict" : false
 				}
 			]
